@@ -13,6 +13,10 @@ ehit-spa-apk/
 ├── capacitor.config.json      # App id, app name, web folder
 ├── package.json               # Capacitor dependencies
 ├── index.html                 # The Ehit Spa app (unchanged)
+├── assets/
+│   └── icon.png               # App icon (replace this to change the icon)
+├── scripts/
+│   └── make_icons.py          # Builds all Android icon sizes from assets/icon.png
 └── README.md
 ```
 
@@ -29,6 +33,13 @@ Optional: put `sw.js` next to `index.html` and the workflow will include it.
    **ehit-spa-apk** artifact. It is a zip containing `app-debug.apk`.
 5. Copy the APK to your phone and install it
    (Android will ask you to allow installs from unknown sources).
+
+## Changing the app icon
+
+Replace `assets/icon.png` with your own square PNG (1024x1024 is ideal) and push.
+The workflow generates every Android icon size from it automatically.
+Keep the important part of the design near the center, because Android
+may crop the edges into a circle or rounded square.
 
 ## Notes
 

@@ -35,6 +35,11 @@ jobs:
           npx cap add android
           npx cap sync android
 
+      - name: Generate app icons
+        run: |
+          pip install pillow
+          python3 scripts/make_icons.py
+
       - name: Build debug APK
         working-directory: android
         run: ./gradlew assembleDebug
