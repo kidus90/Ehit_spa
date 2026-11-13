@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ehit Spa</title><meta name="theme-color" content="#8a2f6b"><script>
+/* PWA manifest and icons are built here so the whole app stays in this one file */
+(function(){try{
+ var A='data:image/png;base64,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',B='data:image/png;base64,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',d=document,h=d.head,
+ dir=location.origin+location.pathname.replace(/[^\/]*$/,''),
+ m={id:location.pathname,name:'Ehit Spa',short_name:'Ehit Spa',description:'Daily sales, expenses and reports',start_url:location.origin+location.pathname,scope:dir,display:'standalone',orientation:'portrait',background_color:'#f5f2f6',theme_color:'#8a2f6b',icons:[{src:A,sizes:'192x192',type:'image/png',purpose:'any maskable'},{src:B,sizes:'512x512',type:'image/png',purpose:'any maskable'}]};
+ [['icon',A],['apple-touch-icon',A]].forEach(function(x){var l=d.createElement('link');l.rel=x[0];l.href=x[1];h.appendChild(l)});
+ if(/^https?:$/.test(location.protocol)){var l=d.createElement('link');l.rel='manifest';l.href=URL.createObjectURL(new Blob([JSON.stringify(m)],{type:'application/manifest+json'}));h.appendChild(l)}
+}catch(e){}})();
+</script><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Ehit Spa">
+<link rel="preconnect" href="https://wmspbeqwfrtlfqnwqdxl.supabase.co" crossorigin><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--bg:#faf7f6;--card:#ffffff;--ink:#221a26;--mut:#7a6e82;--ac:#8e2f6e;--ac2:#c05a97;--ac3:#e7b7d2;--acs:#f7e8f1;--onac:#ffffff;--ok:#177a58;--okbg:#e3f4ed;--wn:#9a6700;--wnbg:#fbf0d8;--bd:#b3261e;--bdb:#fbe7e6;--onbd:#fff;--ln:#ece4ea;--inp:#fbf9fa;--sh-s:0 1px 2px #3d14300d;--sh-m:0 1px 2px #3d14300a,0 10px 30px -12px #3d143026;--sh-l:0 2px 6px #3d143012,0 24px 60px -20px #3d14303a;--r-s:12px;--r-m:16px;--r-l:22px;--sp:clamp(16px,4vw,22px);color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root{--bg:#171119;--card:#221a29;--ink:#f4edf6;--mut:#a99db1;--ac:#e58bbb;--ac2:#f2a9cf;--ac3:#4a2f44;--acs:#382338;--onac:#2b0f22;--ok:#5fd6ab;--okbg:#123227;--wn:#f2bd55;--wnbg:#33270f;--bd:#ff9389;--bdb:#381512;--ln:#352a3c;--inp:#1c1520;--sh-s:0 1px 2px #0006;--sh-m:0 1px 2px #0007,0 10px 30px -12px #000a;--sh-l:0 2px 6px #0008,0 24px 60px -20px #000c}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);-webkit-tap-highlight-color:transparent;font-feature-settings:"tnum" 1,"cv05" 1;letter-spacing:.01em}
+::selection{background:var(--acs);color:var(--ac)}
+body::-webkit-scrollbar{width:10px}body::-webkit-scrollbar-thumb{background:var(--ln);border-radius:99px;border:2px solid var(--bg)}
+header{display:flex;gap:10px 12px;align-items:center;padding:12px 18px;background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid var(--ln);flex-wrap:wrap;position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:12px;flex:1 1 auto;min-width:150px}
+.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:14px 14px 14px 5px;background:linear-gradient(140deg,var(--ac) 10%,var(--ac2) 90%);color:var(--onac);font:italic 700 22px/1 Fraunces,Georgia,"Times New Roman",serif;box-shadow:0 6px 16px -6px var(--ac),inset 0 1px 0 #ffffff40;font-style:normal}
+header b{font-size:17px;font-weight:800;letter-spacing:-.01em;display:block;line-height:1.2}
+.who{color:var(--mut);font-size:12px;display:block;line-height:1.3;font-weight:500;margin-top:1px}
+.hb{display:flex;gap:8px;flex-wrap:wrap}
+nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 67px);z-index:4;display:flex;gap:4px;padding:8px 14px;overflow-x:auto;background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid var(--ln);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{border:0;background:transparent;padding:9px 16px;min-height:38px;border-radius:999px;color:var(--mut);font:inherit;font-weight:600;font-size:14px;white-space:nowrap;transition:color .18s,background .18s,box-shadow .18s;position:relative}
+nav button.on{background:linear-gradient(140deg,var(--ac),var(--ac2));color:var(--onac);font-weight:700;box-shadow:0 4px 14px -4px var(--ac)}
+main{max-width:680px;margin:0 auto;padding:18px var(--sp) 40px}
+.card,.item{background:var(--card);border:1px solid var(--ln);border-radius:var(--r-l);padding:18px;margin-bottom:14px;box-shadow:var(--sh-s)}
+.card{box-shadow:var(--sh-m)}
+.item{margin-bottom:10px;padding:15px 16px;border-radius:var(--r-m);transition:box-shadow .18s,transform .18s,border-color .18s}
+.item.hit:hover{box-shadow:var(--sh-m);transform:translateY(-1px);border-color:var(--ac3)}
+.item.del{opacity:.5}
+.item>div+div,.item>small+div{margin-top:8px}
+h2,h3{margin:2px 0 12px;line-height:1.25;letter-spacing:-.015em}h2{font-size:24px;font-weight:800}h3{font-size:16px;font-weight:700}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:5px 0}
+.big{font-size:18px;border-top:1px solid var(--ln);margin-top:8px;padding-top:10px}
+.mut,small{color:var(--mut)}small{font-size:12.5px;font-weight:500}
+p{margin:8px 0 12px}
+button{font:inherit;cursor:pointer;border-radius:var(--r-s);border:1px solid var(--ln);background:var(--card);color:var(--ink);padding:10px 14px;min-height:42px;font-weight:600;transition:background .16s,border-color .16s,transform .06s,box-shadow .16s,color .16s}
+button:hover{border-color:var(--ac3)}
+button:active{transform:scale(.975)}
+button.p{background:linear-gradient(140deg,var(--ac),var(--ac2));color:var(--onac);border:0;font-weight:700;width:100%;margin-top:14px;padding:13px;min-height:48px;border-radius:var(--r-m);box-shadow:0 8px 20px -8px var(--ac),inset 0 1px 0 #ffffff30}
+button.p:hover{filter:brightness(1.06)}
+button.p:active{transform:scale(.98)}
+button.p:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+button.g{padding:7px 12px;font-size:13px;min-height:36px;border-radius:10px;font-weight:600}button.ok{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,transparent)}button.ok:hover{background:var(--okbg);border-color:var(--ok)}button.no{color:var(--bd);border-color:color-mix(in srgb,var(--bd) 45%,transparent)}button.no:hover{background:var(--bdb);border-color:var(--bd)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.sv{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:14px}
+.svb{display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:13px;min-height:72px;gap:2px;background:var(--acs);border:1.5px solid transparent;border-radius:14px;transition:transform .1s,background .16s,border-color .16s}
+.svb small{color:var(--ac);font-weight:700}
+.svb:active{transform:scale(.97)}
+.svb:hover{border-color:var(--ac3)}
+.seg{display:flex;gap:6px;margin:10px 0 14px;background:var(--inp);padding:5px;border-radius:14px;border:1px solid var(--ln)}
+.seg button{flex:1;padding:10px 8px;border:0;background:transparent;color:var(--mut);font-weight:600;font-size:14px;border-radius:10px;min-height:40px}
+.seg button.on{background:var(--card);color:var(--ac);box-shadow:var(--sh-s);font-weight:700}
+label{display:block;font-size:12.5px;font-weight:700;color:var(--mut);margin-top:12px;text-transform:uppercase;letter-spacing:.04em}
+input,select{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--ln);border-radius:var(--r-s);background:var(--inp);color:var(--ink);margin-top:6px;min-height:48px;font-weight:500;transition:border-color .16s,box-shadow .16s}
+input:hover,select:hover{border-color:var(--ac3)}
+input:focus,select:focus{border-color:var(--ac);box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 16%,transparent);outline:0}
+input::placeholder{color:color-mix(in srgb,var(--mut) 70%,transparent)}
+input[type=checkbox]{width:18px;height:18px;min-height:0;margin:0 8px 0 0;accent-color:var(--ac)}.chk{display:flex;align-items:center;color:var(--ink);font-size:14px;margin-top:10px;text-transform:none;letter-spacing:0;font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px}
+.chip{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;margin:2px 0 2px 6px;background:var(--acs);color:var(--ac);letter-spacing:.01em}.chip:first-child{margin-left:0}.chip.c{background:var(--okbg);color:var(--ok)}.chip.s{background:var(--wnbg);color:var(--wn)}.chip.b{background:var(--bdb);color:var(--bd)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.q{display:flex;gap:10px;align-items:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}.stats div{background:var(--inp);border:1px solid var(--ln);border-radius:14px;padding:11px 13px}.stats small{display:block;margin-bottom:3px;font-weight:700}.stats b{font-size:15px;font-weight:800;letter-spacing:-.01em}
+.login{max-width:400px;margin:9vh auto 0;padding:0 20px}
+.login .logo{width:58px;height:58px;border-radius:19px 19px 19px 7px;font-size:29px;margin-bottom:16px;box-shadow:0 10px 26px -8px var(--ac)}
+.login h2{margin:0 0 4px;font-family:Fraunces,serif;font-weight:700;font-size:32px;letter-spacing:-.02em}.login>p.mut{margin:0 0 20px;font-size:14px}
+.login form{background:var(--card);border:1px solid var(--ln);border-radius:24px;padding:8px 20px 20px;box-shadow:var(--sh-l);margin-bottom:14px}
+.login>button.g{display:block;margin:0 auto}
+.pw{position:relative}.pw input{padding-right:48px}
+.eye{position:absolute;right:4px;top:5px;bottom:0;margin:auto 0;width:42px;height:38px;min-height:0;padding:0;border:0;background:none;color:var(--mut);display:grid;place-items:center;border-radius:10px}
+.eye:hover{color:var(--ac)}.eye svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.eye .off{display:none}.eye.on .off{display:block}.eye.on .see{display:none}
+#t{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));background:var(--ink);color:var(--bg);padding:13px 18px;border-radius:16px;display:none;z-index:9;text-align:center;box-shadow:var(--sh-l);font-weight:600;animation:tin .25s ease}
+@keyframes tin{from{transform:translateY(10px);opacity:0}to{transform:none;opacity:1}}
+#up{position:fixed;top:calc(10px + env(safe-area-inset-top));left:16px;right:16px;max-width:520px;margin:0 auto;background:var(--card);color:var(--ink);border:1px solid var(--ln);border-radius:16px;padding:13px 18px;box-shadow:var(--sh-l);z-index:12;display:none}#up .t{height:6px;background:var(--inp);border-radius:6px;overflow:hidden;margin-top:9px}#up .t i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2));border-radius:6px;transition:width .15s}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2));z-index:10;transition:width .25s;border-radius:0 3px 3px 0}#bar.on{width:85%;transition:width 6s cubic-bezier(.1,.8,.2,1)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:4px 0 14px}.wk{text-align:center;color:var(--mut);font-size:11px;padding:3px 0;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.cd{aspect-ratio:1/1.08;border:1.5px solid var(--ln);border-radius:12px;padding:5px 6px;display:flex;flex-direction:column;justify-content:space-between;background:var(--card);min-width:0;overflow:hidden;transition:transform .12s,box-shadow .12s}
+.cd b{font-size:13px;font-weight:700}.cd small{font-size:10.5px;white-space:nowrap;font-weight:700}.cd.e{background:none;border-color:transparent}
+.cd.has{cursor:pointer;border-bottom:3px solid var(--ac)}.cd.has:hover{transform:translateY(-2px);box-shadow:var(--sh-m)}.cd.st-s{border-bottom-color:var(--wn)}.cd.st-c{border-bottom-color:var(--ok)}.cd.tdy{outline:2px solid var(--ac);outline-offset:1px}.cd.x{opacity:.45}
+.hd{padding:20px 22px;background:linear-gradient(135deg,var(--ac) 0%,var(--ac2) 100%);color:var(--onac);border:0;position:relative;overflow:hidden}
+.hd::after{content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;border-radius:50%;background:#ffffff14}
+.hd small,.hd .mut{color:inherit;opacity:.88}.dtt{font-size:17px;font-weight:800;letter-spacing:-.01em}.big2{font-size:32px;font-weight:800;margin-top:6px;line-height:1.1;letter-spacing:-.02em;font-family:Fraunces,serif}
+.tabs2{margin:0 0 16px}.tabs2 button{padding:11px 4px;font-size:14px}
+.hit{cursor:pointer}.item .sub{color:var(--mut);font-size:13.5px}
+.ck{display:inline-block;width:22px;color:var(--mut)}.ck.y{color:var(--ok);font-weight:700}
+.newb{margin:0 0 16px}
+.sheet{position:fixed;inset:0;background:var(--bg);z-index:6;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}
+.sh-h{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;background:var(--card);border-bottom:1px solid var(--ln);font-size:17px;font-weight:800;position:relative}
+.sh-h::before{content:"";position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);width:44px;height:5px;border-radius:99px;background:var(--ln)}
+.sh-b{flex:1;overflow:auto;padding:18px 16px;max-width:680px;width:100%;margin:0 auto}
+.sh-f{padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--ln)}.sh-f button.p{margin:0;max-width:680px;display:block;margin:0 auto}
+.svb{position:relative}.svb.sel{background:linear-gradient(140deg,var(--ac),var(--ac2));color:var(--onac)}.svb.sel small{color:var(--onac)}.bdg{position:absolute;top:8px;right:10px;font-weight:800;background:#ffffff30;padding:1px 7px;border-radius:99px;font-size:12px}
+.sh-b h3{margin:22px 0 10px}.sh-b h3:first-child{margin-top:0}
+.seg.wrap{flex-wrap:wrap}.seg.wrap button{flex:1 1 28%}
+.qb{background:var(--wnbg);padding:11px 18px;border-bottom:1px solid var(--ln);color:var(--wn)}.qb.off{background:var(--bdb);color:var(--bd)}
+.ch{display:flex;gap:10px;align-items:flex-end;height:170px;margin:12px 0 4px}.cg{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;min-width:0}
+.cb{display:flex;gap:3px;align-items:flex-end;height:118px;width:100%;justify-content:center}.cb i{display:block;width:42%;border-radius:6px 6px 3px 3px;background:linear-gradient(180deg,var(--ac2),var(--ac));min-height:2px;transition:height .4s ease}.cb i.e{background:linear-gradient(180deg,#f0c26a,var(--wn))}
+.cg small{font-size:11px;margin-top:5px;text-align:center;font-weight:600}
+.bl{margin:12px 0}.bt{height:8px;background:var(--inp);border-radius:99px;overflow:hidden;margin-top:6px;border:1px solid var(--ln)}.bt i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--ac2));border-radius:99px;transition:width .5s ease}
+.lg i{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--ac);margin:0 4px 0 10px}.lg i.e{background:var(--wn)}
+ol{padding-left:20px;margin:8px 0 14px}ol li{margin-bottom:6px}
+details summary{cursor:pointer;margin-top:6px}
+.fold{padding:0 16px;border-radius:var(--r-m)}.fold>summary{list-style:none;cursor:pointer;padding:14px 0;font-weight:700;font-size:15px;display:flex;align-items:center;gap:10px;min-height:48px;letter-spacing:-.01em}
+.fold>summary::-webkit-details-marker{display:none}.fold>summary::before{content:"+";display:grid;place-items:center;width:26px;height:26px;border-radius:9px;background:var(--acs);color:var(--ac);font-weight:800;transition:transform .2s}
+.fold[open]>summary::before{content:"\2212"}.fold[open]{padding-bottom:16px}
+.fold .card{border:0;box-shadow:none;padding:0;margin:0;background:transparent}.fold .card>h3{display:none}
+.stool{position:sticky;top:calc(env(safe-area-inset-top,0px) + 120px);z-index:3;background:var(--bg);margin:0 -16px 10px;padding:8px 16px}
+.stool input{margin:0 0 8px}
+.fchips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.fchips::-webkit-scrollbar{display:none}
+.fchips button{flex:none;min-height:36px;padding:6px 15px;border-radius:999px;font-size:13px;font-weight:600;background:var(--card)}
+.fchips button.on{background:linear-gradient(140deg,var(--ac),var(--ac2));color:var(--onac);border-color:transparent;font-weight:700;box-shadow:0 4px 12px -4px var(--ac)}
+.grp{display:flex;justify-content:space-between;align-items:center;margin:20px 2px 8px;font-weight:700;font-size:12.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.sv-i{padding:0;overflow:hidden;scroll-margin-top:150px}.sv-i.open{border-color:var(--ac);box-shadow:var(--sh-m)}
+.srow{display:flex;align-items:center;gap:12px;padding:14px 16px;min-height:58px}
+.srow .sn{flex:1;min-width:0}.srow .sn b,.srow .sn small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.srow .sp{white-space:nowrap;font-weight:800}.srow .chev{color:var(--mut);font-size:12px;width:14px;text-align:center}
+.sedit{padding:0 16px 16px;border-top:1px solid var(--ln);margin-top:0!important}
+@media(max-width:380px){.two{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{header,nav,#qb,.noprint,#t,#bar{display:none!important}body{background:#fff;color:#000}.card{border:1px solid #bbb;break-inside:avoid;box-shadow:none}}
+pre{white-space:pre-wrap;word-break:break-word;font-size:11.5px;margin:6px 0 0;background:var(--inp);border:1px solid var(--ln);border-radius:10px;padding:10px}
+.mdl{position:fixed;inset:0;background:#1c0e16a8;backdrop-filter:blur(4px);z-index:20;display:flex;align-items:center;justify-content:center;padding:16px;animation:tin .18s ease}
+.mdl>div{background:var(--card);border:1px solid var(--ln);border-radius:22px;padding:20px;width:100%;max-width:380px;box-shadow:var(--sh-l);animation:tin .22s ease}.mdl h3{margin:0 0 4px;font-weight:800;letter-spacing:-.01em}.mdl .acts{justify-content:flex-end}
+</style></head>
+<body><div id="app"></div><div id="bar"></div><div id="t" role="status"></div><div id="up" role="status" aria-live="polite"><div class="row"><b id="upt"></b><span id="upp"></span></div><div class="t"><i id="upb"></i></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js" integrity="sha384-BWcjm9OdFth9TbhCxZPdm+gAOUMAzQy9nmTs12ioXdCcbVnJaPMn+fMUoQCLt60R" crossorigin="anonymous"></script>
+<script>
+const SBURL='https://wmspbeqwfrtlfqnwqdxl.supabase.co',SBKEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indtc3BiZXF3ZnJ0bGZxbndxZHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMwMzUwMTUsImV4cCI6MjEwODYxMTAxNX0.rMFSZemqdeYNMpciWL_Ngd-0C9LO2D4s_YGSuRE_Z2w';
+if(typeof supabase==='undefined'){document.getElementById('app').innerHTML='<div class="login"><i class="logo" aria-hidden="true">E</i><h2>Ehit Spa</h2><p>Could not load the app. Check your internet connection and reload the page.</p><button class="p" onclick="location.reload()">Reload</button></div>';throw new Error('supabase-js failed to load')}
+const SB=supabase.createClient(SBURL,SBKEY);
+const PERMS={add_income:'Add income',add_expense:'Add expenses',view_totals:'See totals',approve_expenses:'Approve expenses',verify_transfers:'Verify bank transfers',close_day:'Close the day',view_history:'See past days',export:'Export reports'};
+const ROLES={admin:'Admin',approver:'Approver',employee:'Employee'};
+/* ---------- language (English / Amharic) ---------- */
+let lang=(()=>{try{return localStorage.getItem('lang')||'en'}catch(e){return 'en'}})();
+const AM={'Change password':'የይለፍ ቃል ቀይር','Log out':'ውጣ','Admin':'አስተዳዳሪ','Approver':'አጽዳቂ','Employee':'ሰራተኛ','Approver (mother)':'አጽዳቂ (እናት)',
+'Today':'ዛሬ','Days':'ቀናት','Services':'አገልግሎቶች','Users':'ተጠቃሚዎች','Activity':'እንቅስቃሴ',
+'Sign in to continue.':'ለመቀጠል ይግቡ።','Username':'የተጠቃሚ ስም','Password':'የይለፍ ቃል','Sign in':'ግባ','Wrong username or password.':'የተጠቃሚ ስም ወይም የይለፍ ቃል ትክክል አይደለም።','This account is not active.':'ይህ መለያ ንቁ አይደለም።','Loading…':'በመጫን ላይ…',
+'← All days':'← ሁሉም ቀናት','Income':'ገቢ','Cash':'ጥሬ ገንዘብ','Transfer':'ባንክ ዝውውር','Expenses':'ወጪዎች','Profit':'ትርፍ','Cash in hand':'በእጅ ያለ ገንዘብ',
+'New sale':'አዲስ ሽያጭ','Edit sale':'ሽያጭ አርም','No services yet. Ask the admin to add some.':'እስካሁን አገልግሎት የለም። አስተዳዳሪውን እንዲጨምር ይጠይቁ።','Tap services above to add them. Tap the same one again for more than one.':'ከላይ ያሉትን አገልግሎቶች ይንኩ። ከአንድ በላይ ለመጨመር ደግመው ይንኩ።',
+'Total':'ጠቅላላ','Both':'ሁለቱንም','Paid in cash':'በጥሬ ገንዘብ የተከፈለ','Paid by transfer':'በዝውውር የተከፈለ','Transfer reference':'የዝውውር ማጣቀሻ ቁጥር','Screenshot (optional when a reference is entered)':'ስክሪንሾት (ማጣቀሻ ከገባ አማራጭ ነው)','Customer name (optional)':'የደንበኛ ስም (አማራጭ)',
+'Save sale':'ሽያጭ አስቀምጥ','Save changes':'ለውጦችን አስቀምጥ','Cancel editing':'አርትዖት ሰርዝ','No sales yet.':'እስካሁን ሽያጭ የለም።','No expenses yet.':'እስካሁን ወጪ የለም።',
+'New expense':'አዲስ ወጪ','Edit expense':'ወጪ አርም','What for':'ለምን','Amount':'መጠን','Add expense':'ወጪ ጨምር',
+'Open':'ክፍት','Submitted':'ገብቷል','Closed':'ተዘግቷል','Deleted':'ተሰርዟል','Approved':'ጸድቋል','Rejected':'ውድቅ ተደርጓል','Waiting for approval':'ማጽደቅ በመጠበቅ ላይ','Transfer verified':'ዝውውር ተረጋግጧል','Transfer not verified':'ዝውውር አልተረጋገጠም','Cash + transfer':'ጥሬ + ዝውውር','Disabled':'ታግዷል',
+'View screenshot':'ስክሪንሾት እይ','Unverify':'ማረጋገጫ ሰርዝ','Verify received':'መድረሱን አረጋግጥ','Approve':'አጽድቅ','Reject':'ውድቅ አድርግ','Edit':'አርም','Delete':'ሰርዝ','Restore':'መልስ',
+'Close day':'ቀኑን ዝጋ','Close this day':'ይህን ቀን ዝጋ','Submit the day for approval':'ቀኑን ለማጽደቅ አስገባ','Expected cash in hand (cash income minus expenses):':'የሚጠበቀው በእጅ ያለ ገንዘብ (የጥሬ ገንዘብ ገቢ ሲቀነስ ወጪ):','Cash actually counted':'በእውነት የተቆጠረ ገንዘብ','Note (optional)':'ማስታወሻ (አማራጭ)',
+'Day closed':'ቀኑ ተዘግቷል','difference':'ልዩነት','Reopen day':'ቀኑን እንደገና ክፈት','Delete day':'ቀኑን ሰርዝ','Restore day':'ቀኑን መልስ',
+'Last 7 days':'ያለፉት 7 ቀናት','Last 30 days':'ያለፉት 30 ቀናት','Download CSV':'CSV አውርድ','No days yet.':'እስካሁን ቀን የለም።',
+'Add a service':'አገልግሎት ጨምር','Name':'ስም','Price (ETB)':'ዋጋ (ብር)','Add service':'አገልግሎት ጨምር','Shown to employee':'ለሰራተኛ ይታያል','Save':'አስቀምጥ','Changing a price never changes past reports. Hide a service instead of deleting it.':'ዋጋ መቀየር ያለፉ ሪፖርቶችን አይቀይርም። አገልግሎትን ከመሰረዝ ይልቅ ደብቁት።',
+'Add a user':'ተጠቃሚ ጨምር','Password (8+ characters)':'የይለፍ ቃል (8+ ቁምፊዎች)','Full name':'ሙሉ ስም','Role':'ሚና','Create user':'ተጠቃሚ ፍጠር','Admins can do everything.':'አስተዳዳሪዎች ሁሉን ማድረግ ይችላሉ።','Account active':'መለያ ንቁ ነው','Set new password':'አዲስ የይለፍ ቃል አስቀምጥ',
+'If you change someone\'s role, set their privileges again and save.':'የአንድን ሰው ሚና ከቀየሩ ፈቃዶቹን እንደገና አስተካክለው ያስቀምጡ።',
+'Add income':'ገቢ መመዝገብ','Add expenses':'ወጪ መመዝገብ','See totals':'ድምሮችን ማየት','Approve expenses':'ወጪ ማጽደቅ','Verify bank transfers':'የባንክ ዝውውር ማረጋገጥ','Close the day':'ቀን መዝጋት','See past days':'ያለፉ ቀናት ማየት','Export reports':'ሪፖርት ማውረድ',
+'Nothing yet.':'እስካሁን ምንም የለም።','Details':'ዝርዝር','system':'ስርዓት','insert':'ተጨምሯል','update':'ተቀይሯል','delete':'ተሰርዟል','daily_reports':'የቀን ሪፖርት','transactions':'ሽያጮች','transaction_items':'የሽያጭ እቃዎች','expenses':'ወጪዎች','profiles':'ተጠቃሚዎች','services':'አገልግሎቶች',
+'Reason (optional):':'ምክንያት (አማራጭ):','Delete this sale?':'ይህን ሽያጭ ይሰረዝ?','Delete this expense?':'ይህ ወጪ ይሰረዝ?','Submit the day? You will not be able to edit it afterwards.':'ቀኑ ይግባ? ከዚያ በኋላ ማረም አይችሉም።','Delete this whole day report? You can restore it later.':'የዚህ ቀን ሪፖርት በሙሉ ይሰረዝ? በኋላ መመለስ ይችላሉ።','New password (at least 8 characters):':'አዲስ የይለፍ ቃል (ቢያንስ 8 ቁምፊ):','New password for this user (8+ characters):':'ለዚህ ተጠቃሚ አዲስ የይለፍ ቃል (8+ ቁምፊ):',
+'Sale saved':'ሽያጭ ተቀምጧል','Expense saved':'ወጪ ተቀምጧል','Day submitted':'ቀኑ ገብቷል','Day closed.':'ቀኑ ተዘግቷል።','Saved':'ተቀምጧል','User created':'ተጠቃሚ ተፈጥሯል','Service added':'አገልግሎት ተጨምሯል','Password changed':'የይለፍ ቃል ተቀይሯል','Password updated':'የይለፍ ቃል ተዘምኗል','Too short':'በጣም አጭር ነው',
+'This day is locked':'ይህ ቀን ተቆልፏል','Choose at least one service':'ቢያንስ አንድ አገልግሎት ይምረጡ','Choose how it was paid':'እንዴት እንደተከፈለ ይምረጡ','Add the transfer reference or a screenshot':'የዝውውር ማጣቀሻ ቁጥር ወይም ስክሪንሾት ያስገቡ','The employee has not submitted this day yet':'ሰራተኛው ይህን ቀን እስካሁን አላስገባም','Not allowed':'አይፈቀድም','Admin only':'ለአስተዳዳሪ ብቻ','Enter a description and an amount':'መግለጫ እና መጠን ያስገቡ','Username already exists':'ይህ የተጠቃሚ ስም አለ','Password must be at least 8 characters':'የይለፍ ቃል ቢያንስ 8 ቁምፊ መሆን አለበት','You cannot demote or disable yourself':'ራስዎን ማውረድ ወይም ማገድ አይችሉም','A selected service is not available':'የተመረጠ አገልግሎት አይገኝም','Only today can be submitted':'የዛሬውን ቀን ብቻ ማስገባት ይቻላል','Already closed':'ቀድሞ ተዘግቷል','Already submitted':'ቀድሞ ገብቷል','No transfer to verify':'የሚረጋገጥ ዝውውር የለም','This day is closed':'ይህ ቀን ተዘግቷል','Calendar':'የቀን መቁጠሪያ','List':'ዝርዝር','Days closed':'የተዘጉ ቀናት','Summary':'ማጠቃለያ','Payment':'ክፍያ','+ New sale':'+ አዲስ ሽያጭ','+ Add expense':'+ ወጪ ጨምር','Checklist':'ማረጋገጫ ዝርዝር','Submitted by employee':'በሰራተኛ ገብቷል','Expenses decided':'ወጪዎች ተወስነዋል','Transfers verified':'ዝውውሮች ተረጋግጠዋል','Delete forever':'ለዘላለም ሰርዝ','Delete this day forever? All its sales, expenses and screenshots will be erased and cannot be recovered.':'ይህ ቀን ለዘላለም ይሰረዝ? ሁሉም ሽያጮች፣ ወጪዎች እና ስክሪንሾቶች ይጠፋሉ፤ መመለስ አይቻልም።','Day deleted forever':'ቀኑ ለዘላለም ተሰርዟል','Could not delete all screenshots':'ሁሉንም ስክሪንሾቶች መሰረዝ አልተቻለም','Delete the day first, then delete it forever':'መጀመሪያ ቀኑን ሰርዝ፣ ከዚያ ለዘላለም ሰርዝ','purge':'ለዘላለም ተሰርዟል',
+'Reports':'ሪፖርቶች','Settings':'ቅንብሮች','Ethiopian calendar':'የኢትዮጵያ ዘመን አቆጣጠር','Gregorian calendar':'የግሪጎሪያን አቆጣጠር','This month':'ይህ ወር','Last month':'ባለፈው ወር','Last 3 months':'ያለፉት 3 ወራት','This year':'ይህ ዓመት','Monthly trend':'ወርሃዊ አዝማሚያ','Best-selling services':'በጣም የተሸጡ አገልግሎቶች','Where the money went':'ገንዘቡ የት ወጣ','Transfers by account':'በአካውንት የተደረጉ ዝውውሮች','Expenses by category':'ወጪ በምድብ','Unspecified':'አልተገለጸም','Sales':'ሽያጮች','Average per day':'በቀን አማካይ','Income vs last month':'ገቢ ከባለፈው ወር ጋር','Print / save as PDF':'አትም / እንደ PDF አስቀምጥ','Nothing yet.':'እስካሁን ምንም የለም።',
+'Paid to':'የተከፈለው ወደ','Category':'ምድብ','Waiting to send':'ለመላክ ተጠብቋል','You are offline':'ከመስመር ውጭ ነዎት','Send now':'አሁን ላክ','Discard':'አስወግድ','No internet connection':'ኢንተርኔት የለም','Saved on this phone. It will be sent when you are back online.':'በዚህ ስልክ ላይ ተቀምጧል። ኢንተርኔት ሲመለስ ይላካል።','Add a transfer reference. Screenshots need internet.':'የዝውውር ማጣቀሻ ቁጥር ያስገቡ። ስክሪንሾት ኢንተርኔት ይፈልጋል።',
+'Choose the bank or Telebirr account':'የባንክ ወይም የቴሌብር አካውንት ይምረጡ','Unknown account':'ያልታወቀ አካውንት','Choose a category':'ምድብ ይምረጡ','Unknown category':'ያልታወቀ ምድብ',
+'Payment accounts':'የክፍያ አካውንቶች','Expense categories':'የወጪ ምድቦች','Shown':'ይታያል','New name':'አዲስ ስም','Add':'ጨምር','Changing a name or hiding an item never changes past records.':'ስም መቀየር ወይም መደበቅ ያለፉ መዝገቦችን አይቀይርም።',
+'Telegram alerts':'የቴሌግራም ማሳወቂያዎች','Bot is set up':'ቦቱ ተዘጋጅቷል','Not set up yet':'ገና አልተዘጋጀም','Bot token':'የቦት ቶከን','Find people who sent /start':'/start የላኩ ሰዎችን ፈልግ','Who gets alerts':'ማሳወቂያ የሚደርሳቸው','Nobody added yet.':'እስካሁን ማንም አልተጨመረም።','Chat number':'የቻት ቁጥር','Send test message':'የሙከራ መልእክት ላክ','Remove':'አስወግድ','Paste the bot token first':'መጀመሪያ የቦት ቶከኑን ይለጥፉ','Test message sent. Check Telegram.':'የሙከራ መልእክት ተልኳል። ቴሌግራምን ይመልከቱ።','Enter the chat number':'የቻት ቁጥሩን ያስገቡ','Name':'ስም',
+'Nobody found yet. Ask them to open the bot and send /start, then try again.':'እስካሁን ማንም አልተገኘም። ቦቱን ከፍተው /start እንዲልኩ ይጠይቋቸው፣ ከዚያ እንደገና ይሞክሩ።',
+'Open Telegram, search @BotFather, send /newbot and follow the steps. Copy the token it gives you.':'ቴሌግራምን ይክፈቱ፣ @BotFather ን ይፈልጉ፣ /newbot ይላኩ እና መመሪያውን ይከተሉ። የሚሰጥዎትን ቶከን ይቅዱ።','Ask your mother (and anyone else) to open your new bot and send /start.':'እናትዎ (እና ሌሎች) አዲሱን ቦትዎን ከፍተው /start እንዲልኩ ይጠይቋቸው።','Paste the token here, tap Find people, add them, then Save.':'ቶከኑን እዚህ ይለጥፉ፣ "ፈልግ" ን ይንኩ፣ ሰዎቹን ይጨምሩ፣ ከዚያ ያስቀምጡ።',
+'Supplies':'እቃዎች','Salary':'ደመወዝ','Rent':'ኪራይ','Utilities':'መገልገያዎች','Transport':'ትራንስፖርት','Other':'ሌላ','Telebirr':'ቴሌብር','Tip for staff (optional)':'ለሰራተኞች ጉርሻ (አማራጭ)','Tip amount':'የጉርሻ መጠን','Added to the total and recorded automatically as a Tip expense.':'ወደ ጠቅላላው ይጨመራል፣ እንደ ጉርሻ ወጪም በራስ-ሰር ይመዘገባል።','Service categories':'የአገልግሎት ምድቦች','All':'ሁሉም','No category':'ምድብ የለም','Preparing screenshot…':'ስክሪንሾት በማዘጋጀት ላይ…','Uploading screenshot…':'ስክሪንሾት በመጫን ላይ…','Session expired. Please sign in again.':'ክፍለ ጊዜው አልፏል። እንደገና ይግቡ።','Tip for staff':'ለሰራተኞች ጉርሻ','Tip':'ጉርሻ','Cash must be between 0 and the total':'ጥሬ ገንዘብ ከ0 እስከ ጠቅላላው መሆን አለበት','Enter a name and a price':'ስም እና ዋጋ ያስገቡ','Enter the cash counted':'የተቆጠረውን ገንዘብ ያስገቡ','Cancel':'ሰርዝ','OK':'እሺ','Load more':'ተጨማሪ ጫን','Try again':'እንደገና ሞክር','Search services':'አገልግሎት ፈልግ','Manage categories':'ምድቦችን አስተዳድር','Hidden':'የተደበቀ','No services match.':'ምንም አገልግሎት አልተገኘም።'};
+const PAT=[[/^(\d+) waiting to send$/,'$1 ለመላክ እየጠበቀ ነው'],[/^Cash \+ transfer must equal the total \((.*)\)$/,'ጥሬ + ዝውውር ከጠቅላላው ($1) ጋር እኩል መሆን አለበት'],[/^(\d+) expense\(s\) still need a decision$/,'$1 ወጪ(ዎች) ውሳኔ ይጠብቃሉ'],[/^(\d+) transfer\(s\) are not verified yet$/,'$1 ዝውውር(ዎች) እስካሁን አልተረጋገጡም'],
+[/^Counted cash (.*)$/,'የተቆጠረ ገንዘብ $1'],[/^expected (.*)$/,'የሚጠበቀው $1'],[/^by (.*)$/,'በ$1'],[/^cash (.*) \/ transfer (.*)$/,'ጥሬ $1 / ዝውውር $2'],[/^ref (.*)$/,'ማጣቀሻ $1'],[/^Income (.*)$/,'ገቢ $1'],[/^Expenses (.*)$/,'ወጪ $1'],[/^Profit (.*)$/,'ትርፍ $1'],[/^(.* ETB) in$/,'$1 ገቢ'],[/^(.* ETB) out$/,'$1 ወጪ'],[/^Tip (.*)$/,'ጉርሻ $1']];
+function tx1(s){const k=s.trim();if(!k)return s;let r=null;if(AM[k])r=AM[k];else{const m=k.match(/^(.*) \((\d+)\)$/);if(m&&AM[m[1]])r=AM[m[1]]+' ('+m[2]+')';else for(const[p,v]of PAT)if(p.test(k)){r=k.replace(p,v);break}}
+ return (r===null?s:s.replace(k,r)).replace(/([\d,.]+) ETB/g,'$1 ብር')}
+const tx=s=>lang==='am'?String(s).split(' · ').map(tx1).join(' · '):s;
+function trNode(n){if(n.nodeType===3){const v=tx(n.nodeValue);if(v!==n.nodeValue)n.nodeValue=v}else if(n.nodeType===1&&!['SCRIPT','STYLE','PRE','INPUT','TEXTAREA'].includes(n.tagName))n.childNodes.forEach(trNode)}
+new MutationObserver(ms=>{if(lang==='am')ms.forEach(m=>m.addedNodes.forEach(trNode))}).observe(document.body,{childList:true,subtree:true});
+
+const $=s=>document.querySelector(s);
+const h=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const etb=n=>Number(n||0).toLocaleString('en-US',{maximumFractionDigits:2})+' ETB';
+let cal=(()=>{try{return localStorage.getItem('cal')||'gc'}catch(e){return 'gc'}})();
+const EM_EN=['Meskerem','Tikimt','Hidar','Tahsas','Tir','Yekatit','Megabit','Miazia','Ginbot','Sene','Hamle','Nehase','Pagume'],EM_AM=['መስከረም','ጥቅምት','ኅዳር','ታኅሣሥ','ጥር','የካቲት','መጋቢት','ሚያዝያ','ግንቦት','ሰኔ','ሐምሌ','ነሐሴ','ጳጉሜን'];
+const emN=i=>(lang==='am'?EM_AM:EM_EN)[i],p2=n=>String(n).padStart(2,'0');
+const jdnG=(y,m,d)=>{const a=Math.floor((14-m)/12),yy=y+4800-a,mm=m+12*a-3;return d+Math.floor((153*mm+2)/5)+365*yy+Math.floor(yy/4)-Math.floor(yy/100)+Math.floor(yy/400)-32045};
+const gOf=j=>{const a=j+32044,b=Math.floor((4*a+3)/146097),c=a-Math.floor(146097*b/4),d=Math.floor((4*c+3)/1461),e=c-Math.floor(1461*d/4),m=Math.floor((5*e+2)/153);return{y:100*b+d-4800+Math.floor(m/10),m:m+3-12*Math.floor(m/10),d:e-Math.floor((153*m+2)/5)+1}};
+const jdnE=(y,m,d)=>1723856+365+365*(y-1)+Math.floor(y/4)+30*m+d-31;
+const eOf=j=>{const r=(j-1723856)%1461,n=(r%365)+365*Math.floor(r/1460);return{y:4*Math.floor((j-1723856)/1461)+Math.floor(r/365)-Math.floor(r/1460),m:Math.floor(n/30)+1,d:(n%30)+1}};
+const toEt=ds=>{const[y,m,d]=ds.split('-').map(Number),e=eOf(jdnG(y,m,d));return{y:e.y,m:e.m-1,d:e.d}};
+const fromEt=(y,m,d)=>{const g=gOf(jdnE(y,m+1,d));return g.y+'-'+p2(g.m)+'-'+p2(g.d)};
+const etLen=(y,m)=>m<12?30:((y+1)%4===0?6:5);
+const dt=d=>{const D=new Date(d+'T00:00'),L=lang==='am'?'am-ET':'en-GB';if(cal==='et'){const e=toEt(d);return D.toLocaleDateString(L,{weekday:'short'})+', '+e.d+' '+emN(e.m)+' '+e.y}return D.toLocaleDateString(L,{weekday:'short',day:'numeric',month:'short',year:'numeric'})};
+const todayAddis=()=>new Date(Date.now()+3*36e5).toISOString().slice(0,10);
+const curMo=()=>cal==='et'?(e=>({y:e.y,m:e.m}))(toEt(todayAddis())):{y:+todayAddis().slice(0,4),m:+todayAddis().slice(5,7)-1};
+const moShift=(o,k)=>{let y=o.y,m=o.m+k;const n=cal==='et'?13:12;while(m<0){m+=n;y--}while(m>=n){m-=n;y++}return{y,m}};
+const moLen=o=>cal==='et'?etLen(o.y,o.m):new Date(Date.UTC(o.y,o.m+1,0)).getUTCDate();
+const moDay=(o,d)=>cal==='et'?fromEt(o.y,o.m,d):o.y+'-'+p2(o.m+1)+'-'+p2(d);
+const moLabel=o=>cal==='et'?emN(o.m)+' '+o.y:new Date(Date.UTC(o.y,o.m,1)).toLocaleDateString(lang==='am'?'am-ET':'en-GB',{month:'long',year:'numeric',timeZone:'UTC'});
+const moShort=o=>cal==='et'?emN(o.m).slice(0,3):new Date(Date.UTC(o.y,o.m,1)).toLocaleDateString(lang==='am'?'am-ET':'en-GB',{month:'short',timeZone:'UTC'});
+const sumBy=(arr,k,v)=>{const m={};arr.forEach(x=>{const n=x[k]||'Unspecified';m[n]=(m[n]||0)+Number(x[v])});return Object.entries(m).filter(e=>e[1]>0).sort((a,b)=>b[1]-a[1])};
+const chip=(t,c='')=>`<span class="chip ${c}">${h(t)}</span>`;
+const btn=(a,i,l,c='g')=>`<button class="${c}" data-a="${a}" data-i="${i}">${l}</button>`;
+const live=a=>(a||[]).filter(x=>!x.deleted_at);
+let me,people={},svcs=[],view='',tabs=[],ctx={cart:[],f:{},pay:'cash'};
+const can=k=>me.role==='admin'||!!me.permissions?.[k];
+const toast=(m,bad)=>{const t=$('#t');t.textContent=tx(m);t.style.display='block';t.style.background=bad?'var(--bd)':'var(--ink)';t.style.color=bad?'var(--onbd)':'var(--bg)';clearTimeout(toast.k);toast.k=setTimeout(()=>t.style.display='none',3500)};
+function ask(title,{password=false}={}){return new Promise(res=>{
+ const w=document.createElement('div');w.className='mdl';
+ w.innerHTML=`<div role="dialog" aria-modal="true" aria-labelledby="mdt"><h3 id="mdt">${h(tx(title))}</h3><input id="mdi" ${password?'type="password" autocomplete="new-password"':'type="text" autocomplete="off"'} autocapitalize="none"><div class="acts"><button class="g" id="mdn">${h(tx('Cancel'))}</button><button class="g ok" id="mdy">${h(tx('OK'))}</button></div></div>`;
+ const i=()=>w.querySelector('#mdi'),done=v=>{document.removeEventListener('keydown',kd,true);w.remove();res(v)};
+ const kd=e=>{if(e.key==='Escape'){e.preventDefault();done(null)}else if(e.key==='Enter'&&e.target.id==='mdi'){e.preventDefault();done(i().value)}
+  else if(e.key==='Tab'){const f=[i(),w.querySelector('#mdn'),w.querySelector('#mdy')],k=f.indexOf(document.activeElement);e.preventDefault();f[(k+(e.shiftKey?-1:1)+3)%3].focus()}};
+ document.addEventListener('keydown',kd,true);
+ w.addEventListener('click',e=>{if(e.target===w)done(null)});
+ document.body.appendChild(w);
+ w.querySelector('#mdn').onclick=()=>done(null);w.querySelector('#mdy').onclick=()=>done(i().value);i().focus()})}
+let busy=0;const bar=d=>{busy+=d;$('#bar').classList.toggle('on',busy>0)};
+const rpc=async(n,a)=>{bar(1);try{const{data,error}=await SB.rpc(n,a);if(error){toast(isNet(error)?'No internet connection':error.message,1);throw error}return data}finally{bar(-1)}};
+const q=async p=>{bar(1);try{const{data,error}=await p;if(error){toast(error.message,1);throw error}return data}finally{bar(-1)}};
+function tot(r){const t=live(r.transactions).filter(x=>x.status!=='rejected'),e=live(r.expenses).filter(x=>x.status!=='rejected');const s=(a,k)=>a.reduce((n,x)=>n+Number(x[k]),0);const inc=s(t,'total'),cash=s(t,'cash_amount'),tr=s(t,'transfer_amount'),ex=s(e,'amount');return{inc,cash,tr,ex,net:inc-ex,hand:cash-ex}}
+const stCh=r=>r.deleted_at?chip('Deleted','b'):r.status==='open'?chip('Open','o'):r.status==='submitted'?chip('Submitted','s'):chip('Closed','c');
+
+/* ---------- offline queue ---------- */
+const QK='salonq';
+const qLoad=()=>{try{return JSON.parse(localStorage.getItem(QK)||'[]')}catch(e){return[]}};
+const qSave=a=>{try{localStorage.setItem(QK,JSON.stringify(a))}catch(e){}};
+const isNet=e=>!navigator.onLine||/fetch|network|load failed|timed? ?out|abort/i.test(String((e&&e.message)||e));
+function enqueue(fn,args,label,view){const a=qLoad();a.push({cid:args.p_client,fn,args,label,view,uid:me.id,at:Date.now()});qSave(a);qBar()}
+function qBar(){const el=$('#qb');if(!el||!me)return;const a=qLoad().filter(x=>x.uid===me.id);let t='';
+ if(!navigator.onLine)t+='<div class="qb off">You are offline</div>';
+ if(a.length)t+=`<div class="qb"><div class="row"><span>${a.length} waiting to send</span>${btn('qsend','','Send now','ok')}</div>${a.filter(x=>x.err).map(x=>`<div class="row"><small>${h(x.label)} · ${h(x.err)}</small>${btn('qdrop',x.cid,'Discard','no')}</div>`).join('')}</div>`;
+ el.innerHTML=t}
+let flushing=false;
+async function flushQ(force){if(flushing||!me||!navigator.onLine)return;flushing=true;let changed=false;
+ try{let a=qLoad();for(const it of a.filter(x=>x.uid===me.id&&(force||!x.err))){delete it.err;
+   const{error}=await SB.rpc(it.fn,it.args);
+   if(!error){a=a.filter(x=>x.cid!==it.cid);qSave(a);changed=true}else if(isNet(error)){qSave(a);break}else{it.err=error.message;qSave(a)}}}
+ catch(e){}finally{flushing=false}
+ qBar();if(changed&&ctx.rid&&ctx.r&&!ctx.sheet)entry(ctx.rid).catch(()=>{})}
+window.addEventListener('online',()=>{qBar();flushQ()});window.addEventListener('offline',qBar);
+setInterval(()=>{if(me&&qLoad().some(x=>x.uid===me.id&&!x.err))flushQ()},20000);
+
+/* ---------- login & shell ---------- */
+function loginScreen(msg=''){$('#app').innerHTML=`<div class="login"><i class="logo" aria-hidden="true">E</i><h2>Ehit Spa</h2><p class="mut">Sign in to continue.</p><form id="lf"><label>Username<input id="u" autocomplete="username" autocapitalize="none" required></label><label for="pw">Password</label><div class="pw"><input id="pw" type="password" autocomplete="current-password" required><button type="button" class="eye" id="eye" aria-label="Show password" aria-pressed="false"><svg class="see" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 5.1A10 10 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4.1M6.5 6.6A17 17 0 0 0 2 12s3.6 7 10 7a9.7 9.7 0 0 0 4-.9"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></button></div><button class="p">Sign in</button></form><button class="g" data-a="lang">${lang==='am'?'English':'አማርኛ'}</button><p style="color:var(--bd)">${h(msg)}</p></div>`;
+ $('#eye').onclick=()=>{const i=$('#pw'),b=$('#eye'),show=i.type==='password';i.type=show?'text':'password';b.classList.toggle('on',show);b.setAttribute('aria-pressed',show);b.setAttribute('aria-label',show?'Hide password':'Show password');i.focus()};
+ $('#lf').onsubmit=async e=>{e.preventDefault();const{error}=await SB.auth.signInWithPassword({email:$('#u').value.trim().toLowerCase()+'@salon.example',password:$('#pw').value});if(error)return loginScreen('Wrong username or password.');boot()}}
+const cSet=(k,id,v)=>{try{localStorage.setItem('ec:'+k+':'+id,JSON.stringify(v))}catch(e){}};
+const cGet=(k,id)=>{try{return JSON.parse(localStorage.getItem('ec:'+k+':'+id)||'null')}catch(e){return null}};
+const cClear=id=>{if(!id)return;try{['boot','today'].forEach(k=>localStorage.removeItem('ec:'+k+':'+id))}catch(e){}};
+const cToday=id=>{const b=cGet('today',id);return b&&b.report&&b.report.report_date===todayAddis()?b:null};
+const todayB=async()=>{const b=await rpc('today_bundle');if(me)cSet('today',me.id,b);return b};
+function offlineScreen(){$('#app').innerHTML='<div class="login"><i class="logo" aria-hidden="true">E</i><h2>Ehit Spa</h2><p class="mut">No internet connection, and nothing is saved on this phone yet. Connect once to open the app.</p><button class="p" onclick="location.reload()">Try again</button></div>'}
+async function boot(){let uid=null;
+ try{const{data:{session}}=await SB.auth.getSession();uid=session&&session.user.id}catch(e){}
+ if(!uid&&!navigator.onLine){try{const st=JSON.parse(localStorage.getItem('sb-'+SBURL.split('//')[1].split('.')[0]+'-auth-token')||'null');uid=st&&st.user&&st.user.id}catch(e){}}
+ if(!uid)return loginScreen();
+ ctx.pre=SB.rpc('today_bundle').then(r=>{if(r.error)return null;cSet('today',uid,r.data);return r.data},()=>null);
+ let bb=null,off=false;
+ try{const r=await SB.rpc('boot_bundle');if(r.error)off=true;else bb=r.data}catch(e){off=true}
+ if(off){bb=cGet('boot',uid);ctx.pre=Promise.resolve(cToday(uid));if(!bb)return offlineScreen()}else if(bb)cSet('boot',uid,bb);
+ const p=bb&&bb.me;
+ if(!p||!p.active){ctx.pre=null;cClear(uid);await SB.auth.signOut();return loginScreen('This account is not active.')}
+ me=p;people=Object.fromEntries((bb.people||[]).map(x=>[x.id,x]));
+ tabs=[];if(can('add_income')||can('add_expense'))tabs.push(['today','Today']);
+ if(me.role!=='employee'||can('view_history'))tabs.push(['days','Days']);
+ if(can('export'))tabs.push(['reports','Reports']);
+ if(me.role==='admin')tabs.push(['services','Services'],['settings','Settings'],['users','Users'],['log','Activity']);
+ view=tabs[0][0];go();pendBadge();flushQ()}
+async function pendBadge(){if(!me||me.role==='employee')return;try{const{count}=await SB.from('daily_reports').select('id',{count:'exact',head:true}).eq('status','submitted').is('deleted_at',null);const b=document.querySelector('[data-i="days"]');if(b)b.textContent=count?'Days ('+count+')':'Days';trNode(document.querySelector('nav')||document.body)}catch(e){}}
+function shell(){$('#app').innerHTML=`<header><div class="brand"><i class="logo" aria-hidden="true">E</i><div><b>Ehit Spa</b><span class="who">${h(me.full_name||me.username)} · ${ROLES[me.role]}</span></div></div><div class="hb"><button class="g" data-a="lang">${lang==='am'?'English':'አማርኛ'}</button><button class="g" data-a="pw">Change password</button><button class="g" data-a="out">Log out</button></div></header><nav>${tabs.map(t=>`<button class="${t[0]===view?'on':''}" data-a="tab" data-i="${t[0]}">${t[1]}</button>`).join('')}</nav><div id="qb"></div><main id="m">Loading…</main>`;qBar()}
+async function go(){shell();try{if(view==='today'){ctx.from=null;const b=ctx.pre?await ctx.pre:null;ctx.pre=null;ctx.pg='inc';ctx.sheet=null;ctx.xp=null;setDay(b||await todayB())}else if(view==='days')await days();else if(view==='reports')await reports();else if(view==='settings')await settings();else if(view==='services')await services();else if(view==='users')await users();else await log()}catch(e){console.error(e);if(isNet(e)&&$('#m'))$('#m').innerHTML='<section class="card"><h3>No internet connection</h3><p class="mut">This screen needs the internet.</p><button class="p" data-a="retry">Try again</button></section>'}}
+
+/* ---------- a single day: entries, review, closing ---------- */
+function setDay(b){ctx.rid=b.report.id;ctx.r=b.report;svcs=b.services;ctx.scats=b.service_categories||[];ctx.accts=b.accounts||[];ctx.cats=b.categories||[];draw()}
+async function entry(rid){setDay(await rpc('day_bundle',{p_report:rid}))}
+const editable=r=>!r.deleted_at&&r.status==='open'&&(me.role==='admin'||r.report_date===todayAddis());
+const tipAmt=()=>Math.max(0,+(ctx.f&&ctx.f.tip)||0);
+const cartTotal=()=>ctx.cart.reduce((n,c)=>n+c.price*c.qty,0)+tipAmt();
+function draw(){const r=ctx.r,T=tot(r),ed=editable(r),adm=me.role==='admin',f=ctx.f,ct=cartTotal(),showT=can('view_totals')||me.role!=='employee',open=r.status!=='closed'||adm,pg=ctx.pg||'inc';
+ const by=u=>h(people[u]?.username||''),hm=t=>new Date(t).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+ const desc=a=>a.slice().sort((x,y)=>x.created_at<y.created_at?1:-1);
+ const txs=desc(adm?r.transactions:live(r.transactions)),exs=desc(adm?r.expenses:live(r.expenses));
+ const ql=qLoad().filter(x=>x.uid===me.id&&x.args.p_report===r.id),qrows=fn=>ql.filter(x=>x.fn===fn).map(x=>`<div class="item"><div class="row"><b>${etb(x.view.total)}</b><span>${chip('Waiting to send','s')}</span></div><div class="sub">${h(x.view.items)}</div></div>`).join('');
+ const nPend=live(exs).filter(e=>e.status==='pending').length,nUnv=live(txs).filter(t=>t.status!=='rejected'&&t.transfer_amount>0&&!t.transfer_verified).length;
+ const txr=t=>{const x=ctx.xp===t.id,items=(t.transaction_items||[]).map(i=>h(i.service_name)+(i.quantity>1?' ×'+i.quantity:'')).join(', '),tr=t.transfer_amount>0,needV=tr&&!t.transfer_verified&&t.status!=='rejected'&&!t.deleted_at;
+  return `<div class="item ${t.deleted_at?'del':''}"><div class="hit" data-a="xp" data-i="${t.id}"><div class="row"><b>${etb(t.total)}</b><span>${chip(t.payment_method==='split'?'Cash + transfer':t.payment_method==='cash'?'Cash':'Transfer','o')}${t.status==='rejected'?chip('Rejected','b'):t.status==='approved'?chip('Approved','c'):''}${t.tip>0?chip('Tip '+etb(t.tip),'s'):''}${t.deleted_at?chip('Deleted','b'):''}</span></div><div class="sub">${items}</div><small>${hm(t.created_at)}${t.customer?' · '+h(t.customer):''}</small></div>
+  ${tr?`<div>${t.transfer_verified?chip('Transfer verified','c'):chip('Transfer not verified','s')}${t.transfer_account?chip(t.transfer_account,'o'):''}</div>`:''}
+  ${needV&&can('verify_transfers')&&open?`<div class="acts">${btn('verify',t.id+'|1','Verify received','ok')}</div>`:''}
+  ${x?`<small>${tr?`cash ${etb(t.cash_amount)} / transfer ${etb(t.transfer_amount)}${t.transfer_ref?' · ref '+h(t.transfer_ref):''} · `:''}by ${by(t.created_by)}${t.reject_reason?' · '+h(t.reject_reason):''}</small>
+  <div class="acts">${t.proof_path?btn('proof',t.proof_path,'View screenshot'):''}${tr&&t.transfer_verified&&can('verify_transfers')&&open&&!t.deleted_at?btn('verify',t.id+'|0','Unverify'):''}${adm&&!t.deleted_at?btn('txd',t.id+'|approved','Approve','ok')+btn('txd',t.id+'|rejected','Reject','no'):''}${ed&&can('add_income')&&!t.deleted_at?btn('edit',t.id,'Edit')+btn('del',t.id,'Delete','no'):''}${adm&&t.deleted_at?btn('restore','transaction|'+t.id,'Restore'):''}</div>`:''}</div>`};
+ const exr=e=>{const x=ctx.xp===e.id,pend=e.status==='pending'&&!e.deleted_at;
+  return `<div class="item ${e.deleted_at?'del':''}"><div class="hit" data-a="xp" data-i="${e.id}"><div class="row"><span>${h(e.description)}</span><b>${etb(e.amount)}</b></div><small>${hm(e.created_at)} · by ${by(e.created_by)}</small></div>
+  <div>${chip(e.category||'Other','o')}${e.status==='approved'?chip('Approved','c'):e.status==='rejected'?chip('Rejected','b'):chip('Waiting for approval','s')}${e.deleted_at?chip('Deleted','b'):''}${e.reject_reason?`<small> ${h(e.reject_reason)}</small>`:''}</div>
+  ${pend&&can('approve_expenses')&&open?`<div class="acts">${btn('exd',e.id+'|approved','Approve','ok')+btn('exd',e.id+'|rejected','Reject','no')}</div>`:''}
+  ${x?`<div class="acts">${!pend&&!e.deleted_at&&can('approve_expenses')&&open?btn('exd',e.id+'|approved','Approve','ok')+btn('exd',e.id+'|rejected','Reject','no'):''}${ed&&can('add_expense')&&!e.deleted_at&&!e.tip_tx?btn('eedit',e.id,'Edit')+btn('edel',e.id,'Delete','no'):''}${adm&&e.deleted_at&&!e.tip_tx?btn('restore','expense|'+e.id,'Restore'):''}</div>`:''}</div>`};
+ const head=`${ctx.from?`<button class="g" data-a="back" style="margin-bottom:10px">← All days</button>`:''}
+ <section class="card hd"><div class="row"><b class="dtt">${dt(r.report_date)}</b>${stCh(r)}</div>${showT?`<div class="big2">${etb(T.inc)}</div><small>Income</small>`:''}</section>
+ <div class="seg tabs2">${[['inc','Income ('+live(txs).length+')'],['exp','Expenses ('+live(exs).length+')'],['sum','Summary']].map(([k,l])=>`<button class="${pg===k?'on':''}" data-a="pg" data-i="${k}">${l}</button>`).join('')}</div>`;
+ const incPg=`${ed&&can('add_income')?`<button class="p newb" data-a="nsale">+ New sale</button>`:''}${qrows('save_transaction')}${txs.map(txr).join('')||(qrows('save_transaction')?'':'<p class="mut">No sales yet.</p>')}`;
+ const expPg=`${ed&&can('add_expense')?`<button class="p newb" data-a="nexp">+ Add expense</button>`:''}${qrows('save_expense')}${exs.map(exr).join('')||(qrows('save_expense')?'':'<p class="mut">No expenses yet.</p>')}`;
+ const ck=(ok,l)=>`<div class="row"><span><span class="ck ${ok?'y':''}">${ok?'✓':'○'}</span> <span>${l}</span></span></div>`;
+ const close=can('close_day')&&r.status!=='closed'&&!r.deleted_at&&(r.status==='submitted'||adm)?`<section class="card"><h3>Close this day</h3><p class="mut">Expected cash in hand (cash income minus expenses): <b>${etb(T.hand)}</b></p><label>Cash actually counted<input id="cc" type="number" inputmode="decimal" value="${T.hand}"></label><label>Note (optional)<input id="cn"></label><button class="p" data-a="close">Close day</button></section>`:'';
+ const closed=r.status==='closed'?`<section class="card"><h3>Day closed</h3><p>Counted cash ${etb(r.counted_cash)} · expected ${etb(T.hand)} · difference <b style="color:${Math.abs(r.counted_cash-T.hand)<.01?'var(--ok)':'var(--bd)'}">${etb(r.counted_cash-T.hand)}</b></p>${r.note?`<p class="mut">${h(r.note)}</p>`:''}</section>`:'';
+ const submit=ed&&r.status==='open'&&(can('add_income')||can('add_expense'))?`<button class="p" data-a="submit">Submit the day for approval</button>`:'';
+ const adminAct=adm?`<div class="acts">${r.deleted_at?btn('rrestore','','Restore day')+btn('purge','','Delete forever','no'):(r.status!=='open'?btn('reopen','','Reopen day'):'')+(!r.deleted_at?btn('rdel','','Delete day','no'):'')}</div>`:'';
+ const byAcc=sumBy(live(txs).filter(t=>t.status!=='rejected'&&t.transfer_amount>0).map(t=>({a:t.transfer_account,v:t.transfer_amount})),'a','v'),byCat=sumBy(live(exs).filter(e=>e.status!=='rejected'),'category','amount');
+ const brk=showT?`${byAcc.length?`<section class="card"><h3>Transfers by account</h3>${byAcc.map(([n,v])=>`<div class="row"><span>${h(n)}</span><b>${etb(v)}</b></div>`).join('')}</section>`:''}${byCat.length?`<section class="card"><h3>Expenses by category</h3>${byCat.map(([n,v])=>`<div class="row"><span>${h(n)}</span><b>${etb(v)}</b></div>`).join('')}</section>`:''}`:'';
+ const sumPg=`${showT?`<section class="card"><div class="stats"><div><small>Income</small><b>${etb(T.inc)}</b></div><div><small>Cash</small><b>${etb(T.cash)}</b></div><div><small>Transfer</small><b>${etb(T.tr)}</b></div><div><small>Expenses</small><b>${etb(T.ex)}</b></div><div><small>Profit</small><b>${etb(T.net)}</b></div><div><small>Cash in hand</small><b>${etb(T.hand)}</b></div></div></section>`:''}${brk}
+ ${me.role!=='employee'?`<section class="card"><h3>Checklist</h3>${ck(r.status!=='open','Submitted by employee')}${ck(!nPend,'Expenses decided')}${ck(!nUnv,'Transfers verified')}</section>`:''}${submit}${close}${closed}${adminAct}`;
+ const saleSh=`<div class="sheet"><div class="sh-h"><b>${ctx.edit?'Edit sale':'New sale'}</b><button class="g" data-a="shx" aria-label="Close">✕</button></div><div class="sh-b">
+ <h3>Services</h3>${catBar()}<div class="sv">${svcList().map(s=>{const c=ctx.cart.find(x=>x.id===s.id);return `<button class="svb ${c?'sel':''}" data-a="add" data-i="${s.id}"><b>${h(s.name)}</b><small>${etb(s.price)}</small>${c?`<span class="bdg">×${c.qty}</span>`:''}</button>`}).join('')||'<p class="mut">No services yet. Ask the admin to add some.</p>'}</div>
+ ${ctx.cart.length?`<div class="card">${ctx.cart.map(c=>`<div class="row"><span>${h(c.name)}<br><small>${etb(c.price)}</small></span><span class="q">${btn('dec',c.id,'−')}${c.qty}${btn('inc',c.id,'+')}</span><b>${etb(c.price*c.qty)}</b></div>`).join('')}</div>`:'<p class="mut">Tap services above to add them. Tap the same one again for more than one.</p>'}
+ <h3>Tip for staff (optional)</h3><label>Tip amount<input type="number" inputmode="decimal" min="0" step="any" data-f="tip" value="${h(f.tip??'')}"></label><small>Added to the total and recorded automatically as a Tip expense.</small>
+ <h3>Payment</h3><div class="seg">${[['cash','Cash'],['transfer','Transfer'],['split','Both']].map(([k,l])=>`<button class="${ctx.pay===k?'on':''}" data-a="pay" data-i="${k}">${l}</button>`).join('')}</div>
+ ${ctx.pay==='split'?`<div class="two"><label>Paid in cash<input type="number" inputmode="decimal" data-f="cash" value="${h(f.cash??'')}"></label><label>Paid by transfer<input id="trv" readonly value="${(ct-(+f.cash||0)).toFixed(2)}"></label></div>`:''}
+ ${ctx.pay!=='cash'?`<label>Paid to</label><div class="seg wrap">${(ctx.accts||[]).map(a=>`<button class="${f.account===a?'on':''}" data-a="acc" data-i="${h(a)}">${h(a)}</button>`).join('')}</div><label>Transfer reference<input data-f="ref" value="${h(f.ref||'')}"></label><label>Screenshot (optional when a reference is entered)<input type="file" accept="image/*" id="proof"></label>`:''}
+ <h3>Details</h3><label>Customer name (optional)<input data-f="customer" value="${h(f.customer||'')}"></label></div>
+ <div class="sh-f"><button class="p" id="sb" data-a="save" ${ctx.cart.length?'':'disabled'}>${ctx.edit?'Save changes':'Save sale'} · ${etb(ct)}</button></div></div>`;
+ const expSh=`<div class="sheet"><div class="sh-h"><b>${ctx.eedit?'Edit expense':'New expense'}</b><button class="g" data-a="shx" aria-label="Close">✕</button></div><div class="sh-b"><label>Category</label><div class="seg wrap">${(ctx.cats||[]).map(c=>`<button class="${ctx.ecat===c?'on':''}" data-a="cat" data-i="${h(c)}">${h(c)}</button>`).join('')}</div><label>What for<input id="ed" value="${h(ctx.ed||'')}"></label><label>Amount<input id="ea" type="number" inputmode="decimal" value="${h(ctx.ea||'')}"></label></div><div class="sh-f"><button class="p" data-a="saveexp">${ctx.eedit?'Save changes':'Add expense'}</button></div></div>`;
+ const sheet=ctx.sheet==='sale'&&ed&&can('add_income')?saleSh:ctx.sheet==='exp'&&ed&&can('add_expense')?expSh:'';
+ const sc=$('.sh-b')?.scrollTop||0;
+ $('#m').innerHTML=head+(pg==='inc'?incPg:pg==='exp'?expPg:sumPg)+sheet;
+ const nb=$('.sh-b');if(nb)nb.scrollTop=sc;document.body.style.overflow=sheet?'hidden':''}
+
+/* ---------- days list (month calendar, Gregorian or Ethiopian) ---------- */
+async function days(){
+ ctx.mo=ctx.mo||curMo();ctx.dv=ctx.dv||'cal';
+ const o=ctx.mo,nd=moLen(o),first=moDay(o,1),last=moDay(o,nd),L=lang==='am'?'am-ET':'en-GB',td=todayAddis(),showT=can('view_totals')||me.role!=='employee';
+ const d=await q(SB.from('daily_reports').select('*,transactions(total,cash_amount,transfer_amount,status,deleted_at),expenses(amount,status,deleted_at)').gte('report_date',first).lte('report_date',last).order('report_date',{ascending:false}));
+ ctx.days=d.map(r=>({r,T:tot(r)}));const lv=ctx.days.filter(x=>!x.r.deleted_at);
+ const S=lv.reduce((a,x)=>({i:a.i+x.T.inc,e:a.e+x.T.ex,c:a.c+(x.r.status==='closed'?1:0)}),{i:0,e:0,c:0});
+ const by={};[...ctx.days.filter(x=>x.r.deleted_at),...lv].forEach(x=>by[x.r.report_date]=x);
+ const kk=n=>n>=1e4?Math.round(n/1e3)+'k':n>=1e3?(n/1e3).toFixed(1)+'k':Math.round(n);
+ const off=(new Date(first+'T00:00:00Z').getUTCDay()+6)%7;
+ const wk=[0,1,2,3,4,5,6].map(i=>`<div class="wk">${new Date(Date.UTC(2024,0,1+i)).toLocaleDateString(L,{weekday:'short',timeZone:'UTC'})}</div>`).join('');
+ const cells=Array(off).fill('<div class="cd e"></div>').join('')+Array.from({length:nd},(_,i)=>{const day=i+1,ds=moDay(o,day),x=by[ds];
+  const c='cd'+(ds===td?' tdy':'')+(x?` has st-${x.r.status==='closed'?'c':x.r.status==='submitted'?'s':'o'}${x.r.deleted_at?' x':''}`:'');
+  return x?`<div class="${c}" data-a="open" data-i="${x.r.id}"><b>${day}</b><small>${showT?kk(x.T.inc):''}</small></div>`:`<div class="${c}"><b>${day}</b></div>`}).join('');
+ const list=ctx.days.map(({r,T})=>`<div class="item ${r.deleted_at?'del':''}" data-a="open" data-i="${r.id}" style="cursor:pointer"><div class="row"><b>${dt(r.report_date)}</b><span>${stCh(r)}</span></div>${showT?`<div class="row"><small>Income ${etb(T.inc)}</small><small>Expenses ${etb(T.ex)}</small><small>Profit ${etb(T.net)}</small></div>`:''}</div>`).join('')||'<p class="mut">No days yet.</p>';
+ $('#m').innerHTML=`<div class="row" style="margin-bottom:8px">${btn('mo','-1','‹')}<b style="font-size:17px">${moLabel(o)}</b>${btn('mo','1','›')}</div>
+ <div class="seg">${[['cal','Calendar'],['list','List']].map(([k,l])=>`<button class="${ctx.dv===k?'on':''}" data-a="dv" data-i="${k}">${l}</button>`).join('')}${btn('mo','0','Today')}</div>
+ <div class="acts" style="margin:0 0 10px">${btn('calsw','',cal==='et'?'Gregorian calendar':'Ethiopian calendar')}</div>
+ ${showT?`<section class="card"><div class="stats"><div><small>Income</small><b>${etb(S.i)}</b></div><div><small>Expenses</small><b>${etb(S.e)}</b></div><div><small>Profit</small><b>${etb(S.i-S.e)}</b></div></div><div class="row" style="margin-top:8px"><small>Days closed</small><b>${S.c} / ${lv.length}</b></div>${can('export')?`<div class="acts">${btn('csv','','Download CSV')}</div>`:''}</section>`:''}
+ ${ctx.dv==='cal'?`<div class="cal">${wk}${cells}</div><div>${chip('Open','o')}${chip('Submitted','s')}${chip('Closed','c')}</div>`:list}`}
+
+/* ---------- reports ---------- */
+const bars=(rows,lab,val,fv)=>{const mx=Math.max(1,...rows.map(r=>+r[val]));return rows.map(r=>`<div class="bl"><div class="row"><span>${h(r[lab])}</span><b>${fv(r)}</b></div><div class="bt"><i style="width:${Math.max(2,Math.round(r[val]/mx*100))}%"></i></div></div>`).join('')||'<p class="mut">Nothing yet.</p>'};
+async function reports(){
+ ctx.rp=ctx.rp||'m0';const cur=curMo(),k=ctx.rp;let a=cur,b=cur;
+ if(k==='m1'){a=b=moShift(cur,-1)}else if(k==='m3'){a=moShift(cur,-2)}else if(k==='y'){a={y:cur.y,m:0};b={y:cur.y,m:cal==='et'?12:11}}
+ const t0=moShift(cur,-5);
+ const[R,Tr]=await Promise.all([rpc('report_data',{p_from:moDay(a,1),p_to:moDay(b,moLen(b))}),rpc('report_data',{p_from:moDay(t0,1),p_to:moDay(cur,moLen(cur))})]);
+ const months=[];for(let i=-5;i<=0;i++){const o=moShift(cur,i),f=moDay(o,1),l=moDay(o,moLen(o));let inc=0,ex=0;Tr.days.forEach(x=>{if(x.d>=f&&x.d<=l){inc+=Number(x.income);ex+=Number(x.expenses)}});months.push({o,inc,ex})}
+ const mx=Math.max(1,...months.map(m=>Math.max(m.inc,m.ex))),T=R.totals,inc=Number(T.income),ex=Number(T.expenses),days=Number(T.days),prev=months[4],cm=months[5],pct=prev.inc?Math.round((cm.inc-prev.inc)/prev.inc*100):null;
+ const lab=k==='y'?String(cur.y):moLabel(a)+(a.y!==b.y||a.m!==b.m?' – '+moLabel(b):'');
+ const hh=v=>Math.max(2,Math.round(v/mx*100))+'%',kk=n=>n>=1e4?Math.round(n/1e3)+'k':n>=1e3?(n/1e3).toFixed(1)+'k':Math.round(n);
+ $('#m').innerHTML=`<div class="seg noprint">${[['m0','This month'],['m1','Last month'],['m3','Last 3 months'],['y','This year']].map(([x,l])=>`<button class="${k===x?'on':''}" data-a="rp" data-i="${x}">${l}</button>`).join('')}</div>
+ <div class="acts noprint" style="margin:0 0 10px">${btn('calsw','',cal==='et'?'Gregorian calendar':'Ethiopian calendar')}${btn('print','','Print / save as PDF')}</div>
+ <section class="card"><h3>Ehit Spa · ${h(lab)}</h3><div class="stats"><div><small>Income</small><b>${etb(inc)}</b></div><div><small>Expenses</small><b>${etb(ex)}</b></div><div><small>Profit</small><b>${etb(inc-ex)}</b></div><div><small>Sales</small><b>${T.sales}</b></div><div><small>Average per day</small><b>${etb(days?inc/days:0)}</b></div><div><small>Days</small><b>${days}</b></div></div></section>
+ <section class="card"><h3>Monthly trend</h3><div class="ch">${months.map(m=>`<div class="cg"><div class="cb"><i style="height:${hh(m.inc)}"></i><i class="e" style="height:${hh(m.ex)}"></i></div><small>${h(moShort(m.o))}<br>${kk(m.inc)}</small></div>`).join('')}</div><div class="lg"><small><i></i>Income<i class="e"></i>Expenses</small></div>
+ <div class="row" style="margin-top:8px"><small>Income vs last month</small><b style="color:${pct===null?'inherit':pct>=0?'var(--ok)':'var(--bd)'}">${pct===null?'–':(pct>0?'+':'')+pct+'%'}</b></div></section>
+ <section class="card"><h3>Best-selling services</h3>${bars(R.services,'name','revenue',r=>`${r.qty} × · ${etb(r.revenue)}`)}</section>
+ <section class="card"><h3>Where the money went</h3>${bars(R.categories,'name','total',r=>`${etb(r.total)} · ${ex?Math.round(r.total/ex*100):0}%`)}</section>
+ <section class="card"><h3>Transfers by account</h3>${bars(R.accounts,'name','total',r=>etb(r.total))}<div class="row" style="margin-top:8px"><small>Cash</small><b>${etb(T.cash)}</b></div><div class="row"><small>Transfer</small><b>${etb(T.transfer)}</b></div></section>`}
+
+/* ---------- services (admin) ---------- */
+const svOpt=(sc,v)=>`<option value="">No category</option>`+sc.map(c=>`<option value="${c.id}" ${c.id===v?'selected':''}>${h(c.name)}${c.active?'':' (hidden)'}</option>`).join('');
+const svRow=(s,sc)=>{const cat=sc.find(c=>c.id===s.category_id),o=ctx.sopen===s.id;
+ return `<div class="item sv-i ${s.active?'':'del'} ${o?'open':''}"><div class="srow hit" data-a="sopen" data-i="${s.id}" role="button" aria-expanded="${o}"><div class="sn"><b>${h(s.name)}</b><small>${h(cat?cat.name:'No category')}${s.active?'':' · Hidden'}</small></div><b class="sp">${etb(s.price)}</b><span class="chev">${o?'▲':'▼'}</span></div>${o?`<div class="sedit"><div class="two"><label>Name<input id="n${s.id}" value="${h(s.name)}"></label><label>Price (ETB)<input id="p${s.id}" type="number" inputmode="decimal" value="${s.price}"></label></div><label>Category<select id="c${s.id}">${svOpt(sc,s.category_id)}</select></label><div class="acts"><label class="chk"><input type="checkbox" id="a${s.id}" ${s.active?'checked':''}>Shown to employee</label>${btn('ssave',s.id,'Save','ok')}</div></div>`:''}</div>`};
+function svListHtml(){const sc=ctx.svC,f=ctx.sfil||'all',qq=(ctx.sq||'').trim().toLowerCase(),noCat=s=>!sc.some(c=>c.id===s.category_id);
+ const l=ctx.svD.filter(s=>(!qq||s.name.toLowerCase().includes(qq))&&(f==='all'||(f==='hid'?!s.active:f==='none'?noCat(s):s.category_id===f)));
+ if(!l.length)return '<p class="mut">No services match.</p>';
+ const groups=f==='all'?[...sc.map(c=>[c.name,l.filter(s=>s.category_id===c.id)]),['No category',l.filter(noCat)]].filter(g=>g[1].length):[['',l]];
+ return groups.map(([n,a])=>(n?`<div class="grp"><span>${h(n)}</span><small>${a.length}</small></div>`:'')+a.map(s=>svRow(s,sc)).join('')).join('')}
+function drawServices(){const sc=ctx.svC,d=ctx.svD,f=ctx.sfil||'all',hid=d.filter(s=>!s.active).length,nc=d.filter(s=>!sc.some(c=>c.id===s.category_id)).length;
+ const fs=[['all','All',d.length],...sc.map(c=>[c.id,c.name,d.filter(s=>s.category_id===c.id).length]),...(nc&&sc.length?[['none','No category',nc]]:[]),...(hid?[['hid','Hidden',hid]]:[])];
+ $('#m').innerHTML=`<details class="card fold" ${ctx.saopen?'open':''} ontoggle="ctx.saopen=this.open"><summary>Add a service</summary><section class="card"><h3>Add a service</h3><div class="two"><label>Name<input id="sn"></label><label>Price (ETB)<input id="sp" type="number" inputmode="decimal"></label></div><label>Category<select id="sck">${svOpt(sc,'')}</select></label><button class="p" data-a="sadd">Add service</button></section></details>
+ <div class="stool"><input id="ssq" type="search" autocomplete="off" placeholder="${h(tx('Search services'))}" value="${h(ctx.sq||'')}"><div class="fchips">${fs.map(([k,l,n])=>`<button class="${f===k?'on':''}" data-a="sfil" data-i="${h(k)}">${h(l)} (${n})</button>`).join('')}</div></div>
+ <div id="slist">${svListHtml()}</div>
+ <details class="card fold" ${ctx.skopen?'open':''} ontoggle="ctx.skopen=this.open"><summary>Manage categories</summary>${listEd('sc','Service categories',sc)}</details>
+ <p class="mut">Changing a price never changes past reports. Hide a service instead of deleting it.</p>`}
+async function services(){const[d,sc]=await Promise.all([q(SB.from('services').select('*').order('sort').order('name')),q(SB.from('service_categories').select('*').order('sort').order('name'))]);
+ ctx.svD=d;ctx.svC=sc;drawServices()}
+document.addEventListener('input',e=>{if(e.target.id==='ssq'&&ctx.svD){ctx.sq=e.target.value;$('#slist').innerHTML=svListHtml();trNode($('#slist'))}});
+
+/* ---------- settings (admin) ---------- */
+const tgListHtml=()=>(ctx.nchats||[]).map(c=>`<div class="row"><span>${h(c.name||'')} <small>${h(c.id)}</small></span>${btn('tgrm',h(c.id),'Remove','no')}</div>`).join('')||'<p class="mut">Nobody added yet.</p>';
+const listEd=(t,title,rows)=>`<section class="card"><h3>${title}</h3>${rows.map(x=>`<div class="item ${x.active?'':'del'}"><label>Name<input id="ln-${t}-${x.id}" value="${h(x.name)}"></label><div class="acts"><label class="chk"><input type="checkbox" id="la-${t}-${x.id}" ${x.active?'checked':''}>Shown</label>${btn('lsave',t+'|'+x.id,'Save','ok')}</div></div>`).join('')}<div class="two"><label>New name<input id="lnew-${t}"></label><div style="align-self:end">${btn('ladd',t,'Add')}</div></div></section>`;
+async function settings(){
+ const[pa,ec,nf]=await Promise.all([q(SB.from('payment_accounts').select('*').order('sort').order('name')),q(SB.from('expense_categories').select('*').order('sort').order('name')),rpc('get_notify')]);
+ ctx.hasTok=!!nf.has_token;if(!ctx.nchats)ctx.nchats=nf.chats||[];
+ $('#m').innerHTML=`${listEd('pa','Payment accounts',pa)}${listEd('ec','Expense categories',ec)}<p class="mut">Changing a name or hiding an item never changes past records.</p>
+ <section class="card"><h3>Telegram alerts</h3><p>${nf.has_token?'Bot is set up':'Not set up yet'}</p>
+ <ol class="mut"><li>Open Telegram, search @BotFather, send /newbot and follow the steps. Copy the token it gives you.</li><li>Ask your mother (and anyone else) to open your new bot and send /start.</li><li>Paste the token here, tap Find people, add them, then Save.</li></ol>
+ <label>Bot token<input id="tgt" autocomplete="off" placeholder="${nf.has_token?'(saved) paste only to replace it':'123456:ABC...'}"></label>
+ <div class="acts">${btn('tgfind','','Find people who sent /start')}</div><div id="tgfound" class="acts"></div>
+ <h3 style="margin-top:14px">Who gets alerts</h3><div id="tgl">${tgListHtml()}</div>
+ <div class="two"><label>Name<input id="tgn"></label><label>Chat number<input id="tgi" inputmode="numeric"></label></div><div class="acts">${btn('tgman','','Add')}</div>
+ <button class="p" data-a="tgsave">Save</button><div class="acts">${btn('tgtest','','Send test message')}</div></section>`}
+
+/* ---------- users (admin) ---------- */
+async function users(){const d=await q(SB.from('profiles').select('*').order('created_at'));
+ $('#m').innerHTML=`<section class="card"><h3>Add a user</h3><div class="two"><label>Username<input id="nu" autocapitalize="none"></label><label>Password (8+ characters)<input id="np" type="text"></label><label>Full name<input id="nf"></label><label>Role<select id="nr"><option value="employee">Employee</option><option value="approver">Approver (mother)</option><option value="admin">Admin</option></select></label></div><button class="p" data-a="uadd">Create user</button></section>
+ ${d.map(u=>`<div class="item ${u.active?'':'del'}"><div class="row"><b>${h(u.username)}</b><span>${chip(ROLES[u.role],'o')}${u.active?'':chip('Disabled','b')}</span></div>
+ <div class="two"><label>Full name<input id="f${u.id}" value="${h(u.full_name)}"></label><label>Role<select id="r${u.id}">${Object.entries(ROLES).map(([k,l])=>`<option value="${k}" ${u.role===k?'selected':''}>${l}</option>`).join('')}</select></label></div>
+ ${u.role==='admin'?'<small class="mut">Admins can do everything.</small>':Object.entries(PERMS).map(([k,l])=>`<label class="chk"><input type="checkbox" data-u="${u.id}" data-k="${k}" ${u.permissions?.[k]?'checked':''}>${l}</label>`).join('')}
+ <label class="chk"><input type="checkbox" id="x${u.id}" ${u.active?'checked':''}>Account active</label>
+ <div class="acts">${btn('usave',u.id,'Save changes','ok')}${btn('upw',u.id,'Set new password')}</div></div>`).join('')}
+ <p class="mut">If you change someone's role, set their privileges again and save.</p>`}
+
+/* ---------- activity log (admin) ---------- */
+async function log(more){const N=50;
+ let rq=SB.from('audit_log').select('*').order('id',{ascending:false}).limit(N);
+ if(more&&ctx.logD&&ctx.logD.length)rq=rq.lt('id',ctx.logD[ctx.logD.length-1].id);
+ const d=await q(rq);ctx.logD=more?ctx.logD.concat(d):d;ctx.logMore=d.length===N;logDraw()}
+function logDraw(){const d=ctx.logD,more=ctx.logMore?'<div class="acts" style="justify-content:center">'+btn('logmore','','Load more')+'</div>':'';
+ $('#m').innerHTML=d.length?d.map(l=>`<div class="item"><div class="row"><b>${h(l.username||'system')}</b><small>${new Date(l.at).toLocaleString('en-GB')}</small></div><div>${h(l.action.toLowerCase())} · ${h(l.table_name)}</div><details><summary class="mut">Details</summary><pre>${h(JSON.stringify(l.details,null,1))}</pre></details></div>`).join('')+more:'<p class="mut">Nothing yet.</p>'}
+
+/* ---------- image helpers ---------- */
+async function shrink(f){const im=await createImageBitmap(f),k=Math.min(1,1100/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);return new Promise(r=>c.toBlob(r,'image/jpeg',.72))}
+const upShow=(t,p)=>{$('#up').style.display='block';$('#upt').textContent=tx(t);$('#upp').textContent=p==null?'':Math.round(p)+'%';$('#upb').style.width=(p||0)+'%'};
+const upHide=()=>{$('#up').style.display='none'};
+async function upload(f){let ok=false;upShow('Preparing screenshot…',null);
+ try{const blob=await shrink(f),p=ctx.rid+'/'+crypto.randomUUID()+'.jpg',{data:{session}}=await SB.auth.getSession();
+  if(!session)throw new Error('Session expired. Please sign in again.');
+  await new Promise((done,fail)=>{const x=new XMLHttpRequest();x.open('POST',SBURL+'/storage/v1/object/proofs/'+p);
+   x.setRequestHeader('Authorization','Bearer '+session.access_token);x.setRequestHeader('apikey',SBKEY);x.setRequestHeader('Content-Type','image/jpeg');x.setRequestHeader('x-upsert','false');
+   x.upload.onprogress=e=>{if(e.lengthComputable)upShow('Uploading screenshot…',e.loaded/e.total*100)};
+   x.onload=()=>{if(x.status>=200&&x.status<300){upShow('Uploading screenshot…',100);done()}else{let m='Upload failed';try{m=JSON.parse(x.responseText).message||m}catch(e){}fail(new Error(m))}};
+   x.onerror=()=>fail(new Error('network error'));x.ontimeout=()=>fail(new Error('network timeout'));x.onabort=()=>fail(new Error('network abort'));
+   upShow('Uploading screenshot…',0);x.send(blob)});
+  ok=true;return p}
+ catch(e){if(!isNet(e))toast(e.message,1);throw e}
+ finally{setTimeout(upHide,ok?500:0)}}
+const svcCats=()=>(ctx.scats||[]).filter(c=>svcs.some(s=>s.category_id===c.id));
+const svcOther=()=>{const cs=svcCats();return svcs.filter(s=>!cs.some(c=>c.id===s.category_id))};
+const svcSel=()=>{const cs=svcCats(),v=ctx.scat;if(!cs.length)return'all';if(v==='all'||(v==='other'&&svcOther().length)||cs.some(c=>c.id===v))return v;return cs[0].id};
+const svcList=()=>{const v=svcSel();return v==='all'?svcs:v==='other'?svcOther():svcs.filter(s=>s.category_id===v)};
+const catBar=()=>{const cs=svcCats();if(!cs.length)return'';const v=svcSel();return`<div class="seg wrap">${[['all','All'],...cs.map(c=>[c.id,c.name]),...(svcOther().length?[['other','Other']]:[])].map(([k,l])=>`<button class="${v===k?'on':''}" data-a="scat" data-i="${k}">${h(l)}</button>`).join('')}</div>`};
+const resetSale=()=>{ctx.cart=[];ctx.f={};ctx.pay='cash';ctx.edit=null};
+const reload=()=>ctx.rid&&($('#m').innerHTML.includes('Close this day')||ctx.r)?entry(ctx.rid):go();
+
+/* ---------- actions ---------- */
+const A={
+ lang:()=>{lang=lang==='am'?'en':'am';try{localStorage.setItem('lang',lang)}catch(e){}document.documentElement.lang=lang==='am'?'am':'en';me?go():loginScreen()},
+ nsale:()=>{ctx.sheet='sale';draw()},
+ nexp:()=>{ctx.sheet='exp';if(!ctx.ecat||!(ctx.cats||[]).includes(ctx.ecat))ctx.ecat=(ctx.cats||[])[0]||null;draw()},
+ shx:()=>{ctx.sheet=null;if(ctx.edit)resetSale();ctx.eedit=null;ctx.ed=ctx.ea='';draw()},
+ pg:i=>{ctx.pg=i;ctx.xp=null;draw()},
+ xp:i=>{ctx.xp=ctx.xp===i?null:i;draw()},
+ mo:i=>{ctx.mo=i==='0'?null:moShift(ctx.mo||curMo(),+i);return days()},
+ dv:i=>{ctx.dv=i;return days()},
+ calsw:()=>{cal=cal==='et'?'gc':'et';try{localStorage.setItem('cal',cal)}catch(e){}ctx.mo=null;go()},
+ rp:i=>{ctx.rp=i;return reports()},
+ print:()=>window.print(),
+ qsend:()=>flushQ(true),
+ retry:()=>go(),
+ logmore:()=>log(true),
+ qdrop:i=>{qSave(qLoad().filter(x=>x.cid!==i));qBar();if(ctx.rid&&ctx.r)draw()},
+ lsave:async i=>{const[t,id]=i.split('|');try{await q(SB.from(({pa:'payment_accounts',ec:'expense_categories',sc:'service_categories'})[t]).update({name:$('#ln-'+t+'-'+id).value.trim(),active:$('#la-'+t+'-'+id).checked}).eq('id',id));toast('Saved')}catch(e){}},
+ ladd:async t=>{const n=$('#lnew-'+t).value.trim();if(!n)return;try{await q(SB.from(({pa:'payment_accounts',ec:'expense_categories',sc:'service_categories'})[t]).insert({name:n,sort:Math.floor(Date.now()/1000)%1000000}));toast('Saved');t==='sc'?services():settings()}catch(e){}},
+ tgfind:async()=>{const tk=$('#tgt').value.trim();if(!tk&&!ctx.hasTok)return toast('Paste the bot token first',1);
+  try{let found;
+   const{data:j,error}=await SB.functions.invoke('tg-find',{body:{token:tk}});
+   if(!error){if(!j.ok)throw new Error(j.description||'Telegram error');found=j.result||[]}
+   else if(tk&&(error.name==='FunctionsFetchError'||(error.context&&error.context.status===404))){
+    /* TEMPORARY fallback while the tg-find edge function is not deployed. Delete this branch once it is. */
+    const d=await(await fetch('https://api.telegram.org/bot'+tk+'/getUpdates')).json();if(!d.ok)throw new Error(d.description||'Telegram error');
+    found=(d.result||[]).map(u=>(u.message||u.edited_message||{}).chat).filter(c=>c&&c.type==='private')}
+   else throw error;
+   const seen={};found.forEach(c=>{seen[c.id]=[c.first_name,c.last_name].filter(Boolean).join(' ')||c.username||String(c.id)});
+   const e=Object.entries(seen);$('#tgfound').innerHTML=e.length?e.map(([id,n])=>btn('tgadd',h(id+'|'+n),'Add '+h(n))).join(''):'<p class="mut">Nobody found yet. Ask them to open the bot and send /start, then try again.</p>'}
+  catch(e){toast('Could not reach Telegram: '+e.message,1)}},
+ tgadd:i=>{const[id,...n]=i.split('|');if(!ctx.nchats.some(c=>String(c.id)===id))ctx.nchats.push({id,name:n.join('|')});$('#tgl').innerHTML=tgListHtml()},
+ tgrm:i=>{ctx.nchats=ctx.nchats.filter(c=>String(c.id)!==String(i));$('#tgl').innerHTML=tgListHtml()},
+ tgman:()=>{const id=$('#tgi').value.trim();if(!/^-?\d+$/.test(id))return toast('Enter the chat number',1);if(!ctx.nchats.some(c=>String(c.id)===id))ctx.nchats.push({id,name:$('#tgn').value.trim()});$('#tgl').innerHTML=tgListHtml();$('#tgi').value=$('#tgn').value=''},
+ tgsave:async()=>{try{await rpc('set_notify',{p_token:$('#tgt').value.trim()||null,p_chats:ctx.nchats});toast('Saved');ctx.nchats=null;settings()}catch(e){}},
+ tgtest:async()=>{try{await rpc('notify_test');toast('Test message sent. Check Telegram.')}catch(e){}},
+ out:async()=>{const u=me&&me.id;me=null;cClear(u);await SB.auth.signOut();loginScreen()},
+ pw:async()=>{const p=await ask('New password (at least 8 characters):',{password:true});if(!p)return;if(p.length<8)return toast('Too short',1);const{error}=await SB.auth.updateUser({password:p});error?toast(error.message,1):toast('Password changed')},
+ sopen:i=>{ctx.sopen=ctx.sopen===i?null:i;drawServices();const el=document.querySelector('.sv-i.open');if(el)el.scrollIntoView({block:'nearest'})},
+ sfil:i=>{ctx.sfil=i;drawServices()},
+ tab:i=>{ctx.sopen=null;ctx.sq='';ctx.sfil='all';view=i;ctx.from=null;ctx.pg='inc';ctx.sheet=null;ctx.xp=null;resetSale();go()},
+ back:()=>{ctx.from=null;days()},
+ open:async i=>{ctx.from='days';ctx.pg='inc';ctx.sheet=null;ctx.xp=null;resetSale();await entry(i)},
+ scat:i=>{ctx.scat=i;draw()},add:i=>{const s=svcs.find(x=>x.id===i),c=ctx.cart.find(x=>x.id===i);c?c.qty=Math.min(99,c.qty+1):ctx.cart.push({id:i,name:s.name,price:+s.price,qty:1});draw()},
+ inc:i=>{const c=ctx.cart.find(x=>x.id===i);c.qty=Math.min(99,c.qty+1);draw()},
+ dec:i=>{const c=ctx.cart.find(x=>x.id===i);c.qty--;if(c.qty<1)ctx.cart=ctx.cart.filter(x=>x!==c);draw()},
+ pay:i=>{ctx.pay=i;if(i!=='cash'&&!ctx.f.account&&(ctx.accts||[]).length===1)ctx.f.account=ctx.accts[0];draw()},
+ acc:i=>{ctx.f.account=i;draw()},
+ cat:i=>{ctx.ecat=i;draw()},
+ cancel:()=>{resetSale();draw()},
+ save:async()=>{const f=ctx.f,t=cartTotal(),sp=ctx.pay==='split',editing=!!ctx.edit,file=$('#proof')?.files[0];
+  const args={p_id:ctx.edit||null,p_report:ctx.rid,p_items:ctx.cart.map(c=>({service_id:c.id,qty:c.qty})),p_method:ctx.pay,p_cash:sp?+f.cash||0:null,p_transfer:sp?+(t-(+f.cash||0)).toFixed(2):null,p_ref:ctx.pay==='cash'?null:f.ref||null,p_customer:f.customer||null,p_proof:null,p_client:editing?null:crypto.randomUUID(),p_account:ctx.pay==='cash'?null:f.account||null,...(tipAmt()>0||editing?{p_tip:tipAmt()}:{})};
+  if(sp&&(!(+f.cash>=0)||+f.cash>t))return toast('Cash must be between 0 and the total',1);
+  if(ctx.pay!=='cash'&&!args.p_account)return toast('Choose the bank or Telebirr account',1);
+  if(file){try{args.p_proof=await upload(file)}catch(e){if(!isNet(e)||editing||!args.p_ref)return toast(isNet(e)?'Add a transfer reference. Screenshots need internet.':e.message,1)}}
+  bar(1);let res;try{res=await SB.rpc('save_transaction',args)}catch(e){res={error:e}}finally{bar(-1)}
+  if(res.error){if(isNet(res.error)&&!editing){enqueue('save_transaction',args,etb(t),{total:t,items:ctx.cart.map(c=>c.name+(c.qty>1?' ×'+c.qty:'')).join(', ')});resetSale();ctx.sheet=null;toast('Saved on this phone. It will be sent when you are back online.');return draw()}
+   return toast(isNet(res.error)?'No internet connection':res.error.message,1)}
+  resetSale();ctx.sheet=null;toast('Sale saved');draw();entry(ctx.rid).catch(()=>{})},
+ edit:i=>{const t=ctx.r.transactions.find(x=>x.id===i);ctx.edit=i;ctx.cart=t.transaction_items.map(x=>({id:x.service_id,name:x.service_name,price:+x.unit_price,qty:x.quantity}));ctx.pay=t.payment_method;ctx.f={cash:t.cash_amount,ref:t.transfer_ref||'',customer:t.customer||'',account:t.transfer_account||'',tip:t.tip>0?t.tip:''};ctx.sheet='sale';draw()},
+ del:async i=>{if(!confirm(tx('Delete this sale?')))return;await rpc('delete_entry',{p_kind:'transaction',p_id:i});entry(ctx.rid)},
+ saveexp:async()=>{const editing=!!ctx.eedit,desc=$('#ed').value,amt=+$('#ea').value;
+  const args={p_id:ctx.eedit||null,p_report:ctx.rid,p_desc:desc,p_amount:amt,p_client:editing?null:crypto.randomUUID(),p_category:ctx.ecat||null};
+  if(!ctx.ecat)return toast('Choose a category',1);if(!desc.trim()||!(amt>0))return toast('Enter a description and an amount',1);
+  bar(1);let res;try{res=await SB.rpc('save_expense',args)}catch(e){res={error:e}}finally{bar(-1)}
+  if(res.error){if(isNet(res.error)&&!editing){enqueue('save_expense',args,desc+' '+etb(amt),{total:amt,items:desc});ctx.ed=ctx.ea='';ctx.sheet=null;toast('Saved on this phone. It will be sent when you are back online.');return draw()}
+   return toast(isNet(res.error)?'No internet connection':res.error.message,1)}
+  ctx.eedit=null;ctx.ed=ctx.ea='';ctx.sheet=null;toast('Expense saved');draw();entry(ctx.rid).catch(()=>{})},
+ eedit:i=>{const e=ctx.r.expenses.find(x=>x.id===i);ctx.eedit=i;ctx.ed=e.description;ctx.ea=e.amount;ctx.ecat=e.category;ctx.sheet='exp';draw()},
+ cancelexp:()=>{ctx.eedit=null;ctx.ed=ctx.ea='';draw()},
+ edel:async i=>{if(!confirm(tx('Delete this expense?')))return;await rpc('delete_entry',{p_kind:'expense',p_id:i});entry(ctx.rid)},
+ verify:async i=>{const[id,ok]=i.split('|');await rpc('verify_transfer',{p_id:id,p_ok:ok==='1'});entry(ctx.rid)},
+ txd:async i=>{const[id,s]=i.split('|');let why=null;if(s==='rejected'){why=await ask('Reason (optional):');if(why===null)return}await rpc('decide_transaction',{p_id:id,p_status:s,p_reason:why});entry(ctx.rid)},
+ exd:async i=>{const[id,s]=i.split('|');let why=null;if(s==='rejected'){why=await ask('Reason (optional):');if(why===null)return}await rpc('decide_expense',{p_id:id,p_status:s,p_reason:why});entry(ctx.rid)},
+ proof:async i=>{const{data,error}=await SB.storage.from('proofs').createSignedUrl(i,300);error?toast(error.message,1):window.open(data.signedUrl,'_blank')},
+ restore:async i=>{const[k,id]=i.split('|');await rpc('restore_entry',{p_kind:k,p_id:id});entry(ctx.rid)},
+ submit:async()=>{if(!confirm(tx('Submit the day? You will not be able to edit it afterwards.')))return;await rpc('submit_report',{p_id:ctx.rid});toast('Day submitted');entry(ctx.rid)},
+ close:async()=>{if($('#cc').value===''||!(+$('#cc').value>=0))return toast('Enter the cash counted',1);try{await rpc('close_report',{p_id:ctx.rid,p_counted:+$('#cc').value,p_note:$('#cn').value});toast('Day closed');entry(ctx.rid)}catch(e){}},
+ reopen:async()=>{await rpc('reopen_report',{p_id:ctx.rid});entry(ctx.rid)},
+ rdel:async()=>{if(!confirm(tx('Delete this whole day report? You can restore it later.')))return;await rpc('delete_report',{p_id:ctx.rid});entry(ctx.rid)},
+ purge:async()=>{if(!confirm(tx('Delete this day forever? All its sales, expenses and screenshots will be erased and cannot be recovered.')))return;
+  const rid=ctx.rid,st=SB.storage.from('proofs');
+  try{const{data:fl,error:e1}=await st.list(rid,{limit:1000});if(e1)throw e1;
+   const paths=new Set((fl||[]).map(f=>rid+'/'+f.name));(ctx.r.transactions||[]).forEach(t=>t.proof_path&&paths.add(t.proof_path));
+   if(paths.size){const{data:gone,error:e2}=await st.remove([...paths]);if(e2)throw e2;if((gone||[]).length<paths.size)throw new Error('Could not delete all screenshots')}
+  }catch(e){return toast(e.message||'Error',1)}
+  try{await rpc('purge_report',{p_id:rid});toast('Day deleted forever');ctx.from=null;ctx.rid=null;ctx.r=null;await days()}catch(e){}},
+ rrestore:async()=>{await rpc('restore_report',{p_id:ctx.rid});entry(ctx.rid)},
+ csv:()=>{const E=v=>'"'+String(v??'').replace(/"/g,'""')+'"',rows=[['Date','Status','Income','Cash','Transfer','Expenses','Profit'],...ctx.days.filter(x=>!x.r.deleted_at).map(({r,T})=>[r.report_date,r.status,T.inc,T.cash,T.tr,T.ex,T.net])];const u=URL.createObjectURL(new Blob(['\ufeff'+rows.map(r=>r.map(E).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download='salon-'+moDay(ctx.mo,1)+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)},
+ sadd:async()=>{if(!$('#sn').value.trim()||$('#sp').value===''||!(+$('#sp').value>=0))return toast('Enter a name and a price',1);try{await q(SB.from('services').insert({name:$('#sn').value.trim(),price:+$('#sp').value,category_id:$('#sck').value||null}));toast('Service added');ctx.sq='';ctx.sfil='all';services()}catch(e){}},
+ ssave:async i=>{if(!$('#n'+i).value.trim()||$('#p'+i).value===''||!(+$('#p'+i).value>=0))return toast('Enter a name and a price',1);try{await q(SB.from('services').update({name:$('#n'+i).value.trim(),price:+$('#p'+i).value,category_id:$('#c'+i).value||null,active:$('#a'+i).checked}).eq('id',i));toast('Saved');ctx.sopen=null;services()}catch(e){}},
+ uadd:async()=>{try{await rpc('admin_create_user',{p_username:$('#nu').value,p_password:$('#np').value,p_full_name:$('#nf').value,p_role:$('#nr').value,p_permissions:null});toast('User created');await refreshPeople();users()}catch(e){}},
+ usave:async i=>{const p={};document.querySelectorAll(`[data-u="${i}"]`).forEach(c=>p[c.dataset.k]=c.checked);const role=$('#r'+i).value;
+  try{await rpc('admin_update_user',{p_user:i,p_full_name:$('#f'+i).value,p_role:role,p_active:$('#x'+i).checked,p_permissions:role==='admin'?{}:p});toast('Saved');await refreshPeople();users()}catch(e){}},
+ upw:async i=>{const p=await ask('New password for this user (8+ characters):',{password:true});if(!p)return;try{await rpc('admin_set_password',{p_user:i,p_password:p});toast('Password updated')}catch(e){}}
+};
+async function refreshPeople(){const{data}=await SB.from('profiles').select('*');people=Object.fromEntries((data||[]).map(x=>[x.id,x]))}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(b&&A[b.dataset.a]){e.preventDefault();if(b.disabled)return;b.disabled=true;Promise.resolve().then(()=>A[b.dataset.a](b.dataset.i,b)).catch(()=>{}).finally(()=>{b.disabled=false})}});
+document.addEventListener('input',e=>{const n=e.target.dataset.f;if(!n)return;ctx.f[n]=e.target.value;if((n==='cash'||n==='tip')&&$('#trv'))$('#trv').value=(cartTotal()-(+ctx.f.cash||0)).toFixed(2);if(n==='tip'&&$('#sb'))$('#sb').textContent=(ctx.edit?'Save changes':'Save sale')+' · '+etb(cartTotal())});
+let hiddenAt=0;
+function softRefresh(){const y=window.scrollY;let p=null;
+ if(view==='today')p=ctx.rid?todayB().then(b=>{ctx.from=null;setDay(b)}):go();
+ else if(view==='days')p=ctx.from&&ctx.rid?entry(ctx.rid):days();
+ else if(view==='reports')p=reports();else if(view==='log')p=log();
+ if(p)Promise.resolve(p).then(()=>window.scrollTo(0,y)).catch(()=>{})}
+function maybeRefresh(minAway){if(!me||!navigator.onLine)return;flushQ();pendBadge();
+ if(Date.now()-hiddenAt<minAway||busy||ctx.sheet||document.querySelector('.mdl'))return;
+ if([...document.querySelectorAll('#m input:not([type=checkbox]):not([type=button]),#m textarea')].some(i=>i.value))return;
+ softRefresh()}
+document.addEventListener('visibilitychange',()=>{if(document.hidden){hiddenAt=Date.now();return}maybeRefresh(30000)});
+window.addEventListener('online',()=>maybeRefresh(0));
+if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol))window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{})});
+document.documentElement.lang=lang==='am'?'am':'en';
+SB.auth.onAuthStateChange(ev=>{if(ev==='SIGNED_OUT'&&me){cClear(me.id);me=null;ctx.pre=null;loginScreen('Session expired. Please sign in again.')}});
+boot();
+</script></body></html>

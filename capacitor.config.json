@@ -1,0 +1,6 @@
+{
+  "appId": "com.ehit.spa",
+  "appName": "Ehit Spa",
+  "webDir": "www",
+  "server": { "androidScheme": "https" }
+}
