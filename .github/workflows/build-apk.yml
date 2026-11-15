@@ -35,6 +35,9 @@ jobs:
           npx cap add android
           npx cap sync android
 
+      - name: Add home-screen widget
+        run: python3 scripts/add_widget.py
+
       - name: Generate app icons
         run: |
           pip install pillow

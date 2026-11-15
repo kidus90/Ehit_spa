@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ehit_widget_description">Today\'s net profit, income, expenses, cash and transfers. Refreshes every 2 minutes.</string>
+</resources>

@@ -136,7 +136,13 @@ pre{white-space:pre-wrap;word-break:break-word;font-size:11.5px;margin:6px 0 0;b
 <script>
 const SBURL='https://wmspbeqwfrtlfqnwqdxl.supabase.co',SBKEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indtc3BiZXF3ZnJ0bGZxbndxZHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMwMzUwMTUsImV4cCI6MjEwODYxMTAxNX0.rMFSZemqdeYNMpciWL_Ngd-0C9LO2D4s_YGSuRE_Z2w';
 if(typeof supabase==='undefined'){document.getElementById('app').innerHTML='<div class="login"><i class="logo" aria-hidden="true">E</i><h2>Ehit Spa</h2><p>Could not load the app. Check your internet connection and reload the page.</p><button class="p" onclick="location.reload()">Reload</button></div>';throw new Error('supabase-js failed to load')}
-const SB=supabase.createClient(SBURL,SBKEY);
+/* Android app only: the home-screen widget shares the login session through the native WidgetBridge plugin */
+const WB=(()=>{try{return window.Capacitor&&Capacitor.isNativePlatform&&Capacitor.isNativePlatform()?Capacitor.Plugins.WidgetBridge||null:null}catch(e){return null}})();
+const wbStore=WB?{
+ getItem:async k=>{try{const r=await WB.getItem({key:k});if(r&&r.value!=null)return r.value}catch(e){}try{return localStorage.getItem(k)}catch(e){return null}},
+ setItem:async(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}try{await WB.setItem({key:k,value:v})}catch(e){}},
+ removeItem:async k=>{try{localStorage.removeItem(k)}catch(e){}try{await WB.removeItem({key:k})}catch(e){}}}:null;
+const SB=supabase.createClient(SBURL,SBKEY,wbStore?{auth:{storage:wbStore}}:undefined);
 const PERMS={add_income:'Add income',add_expense:'Add expenses',view_totals:'See totals',approve_expenses:'Approve expenses',verify_transfers:'Verify bank transfers',close_day:'Close the day',view_history:'See past days',export:'Export reports'};
 const ROLES={admin:'Admin',approver:'Approver',employee:'Employee'};
 /* ---------- language (English / Amharic) ---------- */
@@ -220,6 +226,8 @@ let busy=0;const bar=d=>{busy+=d;$('#bar').classList.toggle('on',busy>0)};
 const rpc=async(n,a)=>{bar(1);try{const{data,error}=await SB.rpc(n,a);if(error){toast(isNet(error)?'No internet connection':error.message,1);throw error}return data}finally{bar(-1)}};
 const q=async p=>{bar(1);try{const{data,error}=await p;if(error){toast(error.message,1);throw error}return data}finally{bar(-1)}};
 function tot(r){const t=live(r.transactions).filter(x=>x.status!=='rejected'),e=live(r.expenses).filter(x=>x.status!=='rejected');const s=(a,k)=>a.reduce((n,x)=>n+Number(x[k]),0);const inc=s(t,'total'),cash=s(t,'cash_amount'),tr=s(t,'transfer_amount'),ex=s(e,'amount');return{inc,cash,tr,ex,net:inc-ex,hand:cash-ex}}
+function wbSettings(){if(!WB||!me)return;try{WB.saveSettings({url:SBURL,apikey:SBKEY,lang:lang,cal:cal,show:can('view_totals')||me.role!=='employee'}).catch(()=>{})}catch(e){}}
+function wbTotals(r){if(!WB||!me||!(can('view_totals')||me.role!=='employee')||r.report_date!==todayAddis())return;const T=tot(r);try{WB.saveTotals({net:T.net,inc:T.inc,ex:T.ex,cash:T.cash,tr:T.tr,hand:T.hand,date:r.report_date}).catch(()=>{})}catch(e){}}
 const stCh=r=>r.deleted_at?chip('Deleted','b'):r.status==='open'?chip('Open','o'):r.status==='submitted'?chip('Submitted','s'):chip('Closed','c');
 
 /* ---------- offline queue ---------- */
@@ -267,13 +275,13 @@ async function boot(){let uid=null;
  if(me.role!=='employee'||can('view_history'))tabs.push(['days','Days']);
  if(can('export'))tabs.push(['reports','Reports']);
  if(me.role==='admin')tabs.push(['services','Services'],['settings','Settings'],['users','Users'],['log','Activity']);
- view=tabs[0][0];go();pendBadge();flushQ()}
+ view=tabs[0][0];wbSettings();go();pendBadge();flushQ()}
 async function pendBadge(){if(!me||me.role==='employee')return;try{const{count}=await SB.from('daily_reports').select('id',{count:'exact',head:true}).eq('status','submitted').is('deleted_at',null);const b=document.querySelector('[data-i="days"]');if(b)b.textContent=count?'Days ('+count+')':'Days';trNode(document.querySelector('nav')||document.body)}catch(e){}}
 function shell(){$('#app').innerHTML=`<header><div class="brand"><i class="logo" aria-hidden="true">E</i><div><b>Ehit Spa</b><span class="who">${h(me.full_name||me.username)} · ${ROLES[me.role]}</span></div></div><div class="hb"><button class="g" data-a="lang">${lang==='am'?'English':'አማርኛ'}</button><button class="g" data-a="pw">Change password</button><button class="g" data-a="out">Log out</button></div></header><nav>${tabs.map(t=>`<button class="${t[0]===view?'on':''}" data-a="tab" data-i="${t[0]}">${t[1]}</button>`).join('')}</nav><div id="qb"></div><main id="m">Loading…</main>`;qBar()}
 async function go(){shell();try{if(view==='today'){ctx.from=null;const b=ctx.pre?await ctx.pre:null;ctx.pre=null;ctx.pg='inc';ctx.sheet=null;ctx.xp=null;setDay(b||await todayB())}else if(view==='days')await days();else if(view==='reports')await reports();else if(view==='settings')await settings();else if(view==='services')await services();else if(view==='users')await users();else await log()}catch(e){console.error(e);if(isNet(e)&&$('#m'))$('#m').innerHTML='<section class="card"><h3>No internet connection</h3><p class="mut">This screen needs the internet.</p><button class="p" data-a="retry">Try again</button></section>'}}
 
 /* ---------- a single day: entries, review, closing ---------- */
-function setDay(b){ctx.rid=b.report.id;ctx.r=b.report;svcs=b.services;ctx.scats=b.service_categories||[];ctx.accts=b.accounts||[];ctx.cats=b.categories||[];draw()}
+function setDay(b){wbSettings();wbTotals(b.report);ctx.rid=b.report.id;ctx.r=b.report;svcs=b.services;ctx.scats=b.service_categories||[];ctx.accts=b.accounts||[];ctx.cats=b.categories||[];draw()}
 async function entry(rid){setDay(await rpc('day_bundle',{p_report:rid}))}
 const editable=r=>!r.deleted_at&&r.status==='open'&&(me.role==='admin'||r.report_date===todayAddis());
 const tipAmt=()=>Math.max(0,+(ctx.f&&ctx.f.tip)||0);
@@ -478,7 +486,7 @@ const A={
  tgman:()=>{const id=$('#tgi').value.trim();if(!/^-?\d+$/.test(id))return toast('Enter the chat number',1);if(!ctx.nchats.some(c=>String(c.id)===id))ctx.nchats.push({id,name:$('#tgn').value.trim()});$('#tgl').innerHTML=tgListHtml();$('#tgi').value=$('#tgn').value=''},
  tgsave:async()=>{try{await rpc('set_notify',{p_token:$('#tgt').value.trim()||null,p_chats:ctx.nchats});toast('Saved');ctx.nchats=null;settings()}catch(e){}},
  tgtest:async()=>{try{await rpc('notify_test');toast('Test message sent. Check Telegram.')}catch(e){}},
- out:async()=>{const u=me&&me.id;me=null;cClear(u);await SB.auth.signOut();loginScreen()},
+ out:async()=>{const u=me&&me.id;me=null;if(WB)try{WB.clearAll()}catch(e){}cClear(u);await SB.auth.signOut();loginScreen()},
  pw:async()=>{const p=await ask('New password (at least 8 characters):',{password:true});if(!p)return;if(p.length<8)return toast('Too short',1);const{error}=await SB.auth.updateUser({password:p});error?toast(error.message,1):toast('Password changed')},
  sopen:i=>{ctx.sopen=ctx.sopen===i?null:i;drawServices();const el=document.querySelector('.sv-i.open');if(el)el.scrollIntoView({block:'nearest'})},
  sfil:i=>{ctx.sfil=i;drawServices()},
@@ -555,6 +563,6 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden){hiddenAt=D
 window.addEventListener('online',()=>maybeRefresh(0));
 if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol))window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{})});
 document.documentElement.lang=lang==='am'?'am':'en';
-SB.auth.onAuthStateChange(ev=>{if(ev==='SIGNED_OUT'&&me){cClear(me.id);me=null;ctx.pre=null;loginScreen('Session expired. Please sign in again.')}});
+SB.auth.onAuthStateChange(ev=>{if(ev==='SIGNED_OUT'&&me){if(WB)try{WB.clearAll()}catch(e){}cClear(me.id);me=null;ctx.pre=null;loginScreen('Session expired. Please sign in again.')}});
 boot();
 </script></body></html>
